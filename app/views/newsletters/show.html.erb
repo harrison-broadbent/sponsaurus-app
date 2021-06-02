@@ -8,9 +8,16 @@
     <p>Information: <%= @newsletter.information %></p>
   </div>
 
-  <%= link_to "View slots for #{@newsletter.name}", newsletter_slots_path(@newsletter) %>
+  <div class="display-card__links">
+    <% if current_user_owns_newsletter? %>
+      <%= link_to 'Edit', edit_newsletter_path(@newsletter) %>
+    <% end %>
+
+    <%= link_to "View slots for #{@newsletter.name}", newsletter_slots_path(@newsletter) %>
+  </div>
 
 </div>
 
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+<% if current_user_owns_newsletter? %>
+  <%= link_to 'Back', newsletters_path %>
+<% end %>

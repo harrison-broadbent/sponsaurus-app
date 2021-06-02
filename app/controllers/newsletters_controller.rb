@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class NewslettersController < ApplicationController
-  before_action :set_newsletter, only: %i[ show edit update destroy ]
+  before_action :set_newsletter, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[index edit update destroy]
 
   # GET /newsletters or /newsletters.json
   def index
@@ -7,8 +10,7 @@ class NewslettersController < ApplicationController
   end
 
   # GET /newsletters/1 or /newsletters/1.json
-  def show
-  end
+  def show; end
 
   # GET /newsletters/new
   def new
@@ -16,8 +18,7 @@ class NewslettersController < ApplicationController
   end
 
   # GET /newsletters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /newsletters or /newsletters.json
   def create
@@ -25,7 +26,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        format.html { redirect_to @newsletter, notice: "Newsletter was successfully created." }
+        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully created.' }
         format.json { render :show, status: :created, location: @newsletter }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class NewslettersController < ApplicationController
   def update
     respond_to do |format|
       if @newsletter.update(newsletter_params)
-        format.html { redirect_to @newsletter, notice: "Newsletter was successfully updated." }
+        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully updated.' }
         format.json { render :show, status: :ok, location: @newsletter }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,12 +52,10 @@ class NewslettersController < ApplicationController
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to newsletters_url, notice: "Newsletter was successfully destroyed." }
+      format.html { redirect_to newsletters_url, notice: 'Newsletter was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
-
 
   private
 
