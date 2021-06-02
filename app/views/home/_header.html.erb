@@ -8,8 +8,9 @@
       <%= link_to current_user.name, user_path(current_user), class: 'nav-item'  %>
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-item' %>
     <% else %>
-      <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-item' %>
-      <%= link_to 'Sign In', new_user_session_path, class: 'nav-item' %>
-    <% end %>
+      <%#= link_to 'Sign Up', new_user_registration_path, class: 'nav-item' %>
+      <%#= link_to 'Sign In', new_user_session_path, class: 'nav-item' %>
+      <%= link_to "Sign in with Google.", omniauth_authorize_path(:user, :google_oauth2), method: :post %><br />
+  <% end %>
   </div>
 </div>

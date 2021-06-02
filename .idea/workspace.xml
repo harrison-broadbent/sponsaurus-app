@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/newsletters_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/newsletters_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/slot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/slot.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_header.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/newsletters/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20210531100024_create_slots.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20210531100024_create_slots.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

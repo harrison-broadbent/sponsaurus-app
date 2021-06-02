@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="display-card">
+  <%= render 'bookings/booking_information', booking: @booking %>
+
+  <div class="display-card__links">
+    <%= link_to 'Edit', [:edit, @slot, @booking] %>
+    <%= link_to 'Remove booking', [@slot, @booking], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+
+<%= link_to 'Back', [@slot.newsletter, @slot] %>
+<!--<td><%#= link_to 'Destroy', newsletter, method: :delete,  %></td>-->
+

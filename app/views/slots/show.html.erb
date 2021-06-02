@@ -4,8 +4,14 @@
   <div class="display-card__data">
     <h2><%= @slot.formatted_date %></h2>
     <p>Price: $<%= @slot.price_cents %></p>
-    <p>Booked?: <%= @slot.booked %></p>
+    <p>Booked?: <%= @slot.booked? %></p>
   </div>
+
+  <% if @slot.booked? %>
+    <h2>Booking Information: </h2>
+    <%= render 'bookings/booking_information', booking: @slot.booking %>
+  <% end %>
+
   <div class="display-card__links">
     <%= link_to 'Edit', [:edit, @newsletter, @slot] %>
   </div>
