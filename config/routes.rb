@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
 
+  # resources :newsletters do
+  #   # make slots route through a newsletter
+  #   resources :slots do
+  #     # make bookings route through a slot
+  #     resources :bookings
+  #   end
+  # end
+
   resources :newsletters do
-    # make slots route through a newsletter
     resources :slots
   end
+
+  resources :slots do
+    resources :bookings
+  end
+
   # devise_for must sit above resources :users
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [:show]

@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class SlotsController < ApplicationController
   before_action :set_slot, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[update edit destroy]
   before_action :set_associated_newsletter
 
   # GET /slots or /slots.json
@@ -19,8 +22,7 @@ class SlotsController < ApplicationController
   end
 
   # GET /slots/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /slots or /slots.json
   def create
@@ -32,7 +34,7 @@ class SlotsController < ApplicationController
 
     respond_to do |format|
       if @slot.save
-        format.html { redirect_to [@newsletter, @slot], notice: "Slot was successfully created." }
+        format.html { redirect_to [@newsletter, @slot], notice: 'Slot was successfully created.' }
         format.json { render :show, status: :created, location: @slot }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +47,7 @@ class SlotsController < ApplicationController
   def update
     respond_to do |format|
       if @slot.update(slot_params)
-        format.html { redirect_to @slot, notice: "Slot was successfully updated." }
+        format.html { redirect_to @slot, notice: 'Slot was successfully updated.' }
         format.json { render :show, status: :ok, location: @slot }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,11 +60,10 @@ class SlotsController < ApplicationController
   def destroy
     @slot.destroy
     respond_to do |format|
-      format.html { redirect_to newsletter_slots_path(@newsletter), notice: "Slot was successfully destroyed." }
+      format.html { redirect_to newsletter_slots_path(@newsletter), notice: 'Slot was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
 
   private
 
