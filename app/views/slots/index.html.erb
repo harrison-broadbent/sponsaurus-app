@@ -4,19 +4,23 @@
 <h2>Newsletter: <%= @newsletter.name %></h2>
 
 <% @slots.each do |slot| %>
-<div class="display-card">
-  <div class="display-card__data">
-    <h2><%= slot.formatted_date %></h2>
-    <p>Price: $<%= slot.price_cents %></p>
-    <p>Booked?: <%= slot.booked %></p>
-    <div class="display-card__links">
-      <p><%= link_to 'Show', [@newsletter, slot] %></p>
-      <p><%= link_to 'Edit', [:edit, @newsletter, slot] %></p>
-      <p><%= link_to 'Destroy', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <p><%= link_to "Book this slot" %></p>
+  <div class="display-card">
+    <div class="display-card__data">
+      <h2><%= slot.formatted_date %></h2>
+      <p>Price: $<%= slot.price_cents %></p>
+      <p>Booked?: <%= slot.booked? %></p>
+      <div class="display-card__links">
+        <p><%= link_to 'Show', [@newsletter, slot] %></p>
+        <p><%= link_to 'Edit', [:edit, @newsletter, slot] %></p>
+        <p><%= link_to 'Destroy', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% if slot.booked? %>
+          <p><%= link_to "View booking information", [slot, slot.booking] %></p>
+        <% else %>
+          <p><%= link_to "Book this slot", new_slot_booking_path(slot) %></p>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 <% end %>
 
 <br>

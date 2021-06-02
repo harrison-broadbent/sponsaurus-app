@@ -24,11 +24,17 @@ class Slot < ApplicationRecord
 
   # Associations
   belongs_to :newsletter
+  has_one :booking
+  default_scope -> { order(publish_date: :desc) }
 
   # Validations
 
   # Methods
   def formatted_date
     publish_date.strftime('%B %e, %Y')
+  end
+
+  def booked?
+    !booking.nil?
   end
 end

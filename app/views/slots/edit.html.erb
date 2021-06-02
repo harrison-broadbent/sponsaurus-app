@@ -2,5 +2,5 @@
 
 <%= render 'form', slot: @slot %>
 
-<%= link_to 'Show', @slot %> |
-<%= link_to 'Back', slots_path %>
+<%= link_to 'Show', [@newsletter, @slot] %> |
+<%= link_to 'Back', newsletter_slots_path(@newsletter) %>
