@@ -4,7 +4,7 @@ class CreateNewsletters < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :information
       t.text :statistics
-      t.integer :user_id
+      t.references :user
 
       t.timestamps
     end

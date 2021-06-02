@@ -3,4 +3,5 @@
   <h3><%= current_user.name %></h3>
   <h3><%= current_user.email %></h3>
   <%= image_tag(current_user.image) unless current_user.image.nil? %>
+  <%= link_to "View your newsletters.", newsletters_path%>
 <% end %>

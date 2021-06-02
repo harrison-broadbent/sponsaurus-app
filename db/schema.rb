@@ -19,26 +19,28 @@ ActiveRecord::Schema.define(version: 2021_05_31_100024) do
     t.string "name"
     t.text "information"
     t.text "statistics"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_newsletters_on_user_id"
   end
 
   create_table "slots", force: :cascade do |t|
     t.integer "price_cents"
-    t.boolean "booked"
+    t.boolean "booked", default: false
     t.datetime "publish_date"
-    t.integer "newsletter_id"
+    t.bigint "newsletter_id"
     t.string "booker_name"
     t.string "booker_email"
     t.string "booker_billing_address"
     t.string "advert_title"
     t.string "advert_product"
     t.string "advert_url"
-    t.text "advert_description"
     t.string "advert_image_url"
+    t.text "advert_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["newsletter_id"], name: "index_slots_on_newsletter_id"
   end
 
   create_table "users", force: :cascade do |t|

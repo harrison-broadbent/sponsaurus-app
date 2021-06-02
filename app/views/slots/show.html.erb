@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @slot.price %>
-</p>
+<div class="display-card">
+  <div class="display-card__data">
+    <h2><%= @slot.formatted_date %></h2>
+    <p>Price: $<%= @slot.price_cents %></p>
+    <p>Booked?: <%= @slot.booked %></p>
+  </div>
+  <div class="display-card__links">
+    <%= link_to 'Edit', [:edit, @newsletter, @slot] %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_slot_path(@slot) %> |
-<%= link_to 'Back', slots_path %>
+<%= link_to 'Back', newsletter_slots_path(@newsletter) %>
