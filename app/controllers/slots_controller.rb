@@ -1,5 +1,6 @@
 class SlotsController < ApplicationController
-  before_action :set_slot, only: %i[ show edit update destroy ]
+  before_action :set_slot, only: %i[show edit update destroy]
+  before_action :set_associated_newsletter
 
   # GET /slots or /slots.json
   def index
@@ -8,6 +9,8 @@ class SlotsController < ApplicationController
 
   # GET /slots/1 or /slots/1.json
   def show
+    # @slot set using before_action
+    # @newsletter set using before_action
   end
 
   # GET /slots/new
@@ -21,11 +24,15 @@ class SlotsController < ApplicationController
 
   # POST /slots or /slots.json
   def create
-    @slot = Slot.new(slot_params)
+    # @slot = @newsletter.slots.build(slot_params.except(:price_cents))
+    # convert from dollars.cents to cents
+    # @slot.price_cents = slot_params.price_cents * 100
+
+    @slot = @newsletter.slots.build(slot_params)
 
     respond_to do |format|
       if @slot.save
-        format.html { redirect_to @slot, notice: "Slot was successfully created." }
+        format.html { redirect_to [@newsletter, @slot], notice: "Slot was successfully created." }
         format.json { render :show, status: :created, location: @slot }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,19 +58,25 @@ class SlotsController < ApplicationController
   def destroy
     @slot.destroy
     respond_to do |format|
-      format.html { redirect_to slots_url, notice: "Slot was successfully destroyed." }
+      format.html { redirect_to newsletter_slots_path(@newsletter), notice: "Slot was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_slot
-      @slot = Slot.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def slot_params
-      params.require(:slot).permit(:price)
-    end
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_slot
+    @slot = Slot.find(params[:id])
+  end
+
+  def set_associated_newsletter
+    @newsletter = Newsletter.find(params[:newsletter_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def slot_params
+    params.require(:slot).permit(:price_cents, :publish_date)
+  end
 end

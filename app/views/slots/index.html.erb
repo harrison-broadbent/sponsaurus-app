@@ -1,27 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Slots</h1>
+<h2>Newsletter: <%= @newsletter.name %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @slots.each do |slot| %>
-      <tr>
-        <td><%= slot.price %></td>
-        <td><%= link_to 'Show', slot %></td>
-        <td><%= link_to 'Edit', edit_slot_path(slot) %></td>
-        <td><%= link_to 'Destroy', slot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @slots.each do |slot| %>
+<div class="display-card">
+  <div class="display-card__data">
+    <h2><%= slot.formatted_date %></h2>
+    <p>Price: $<%= slot.price_cents %></p>
+    <p>Booked?: <%= slot.booked %></p>
+    <div class="display-card__links">
+      <p><%= link_to 'Show', [@newsletter, slot] %></p>
+      <p><%= link_to 'Edit', [:edit, @newsletter, slot] %></p>
+      <p><%= link_to 'Destroy', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <p><%= link_to "Book this slot" %></p>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Slot', new_slot_path %>
+<%= link_to 'New Slot', new_newsletter_slot_path(@newsletter, @slot) %>

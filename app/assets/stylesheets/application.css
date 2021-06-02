@@ -14,8 +14,14 @@
  *= require_self
  */
 
+/*
+    Uses the BEM method to name css -
+    blockName__elementName -modifierName
+*/
+
 * {
     font-family: "Inter", sans-serif;
+    color: #22292f;
 }
 
 body {

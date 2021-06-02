@@ -21,7 +21,7 @@ class NewslettersController < ApplicationController
 
   # POST /newsletters or /newsletters.json
   def create
-    @newsletter = Newsletter.new(newsletter_params)
+    @newsletter = current_user.newsletters.build(newsletter_params)
 
     respond_to do |format|
       if @newsletter.save
@@ -56,14 +56,17 @@ class NewslettersController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_newsletter
-      @newsletter = Newsletter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def newsletter_params
-      params.require(:newsletter).permit(:name)
-    end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_newsletter
+    @newsletter = Newsletter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def newsletter_params
+    params.require(:newsletter).permit(:name, :information, :statistics)
+  end
 end

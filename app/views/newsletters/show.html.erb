@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @newsletter.name %>
-</p>
+<div class="display-card">
+
+  <div class="display-card__data">
+    <h2><%= @newsletter.name %></h2>
+    <p>Statistics: <%= @newsletter.statistics %></p>
+    <p>Information: <%= @newsletter.information %></p>
+  </div>
+
+  <%= link_to "View slots for #{@newsletter.name}", newsletter_slots_path(@newsletter) %>
+
+</div>
 
 <%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
 <%= link_to 'Back', newsletters_path %>
