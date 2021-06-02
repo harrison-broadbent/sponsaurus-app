@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_121013) do
+ActiveRecord::Schema.define(version: 2021_05_31_100024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string "name"
+    t.text "information"
+    t.text "statistics"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.integer "price_cents"
+    t.boolean "booked"
+    t.datetime "publish_date"
+    t.integer "newsletter_id"
+    t.string "booker_name"
+    t.string "booker_email"
+    t.string "booker_billing_address"
+    t.string "advert_title"
+    t.string "advert_product"
+    t.string "advert_url"
+    t.text "advert_description"
+    t.string "advert_image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

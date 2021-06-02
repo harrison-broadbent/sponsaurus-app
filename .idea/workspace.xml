@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fc1f3add-dcf4-44cf-8e84-fb4d806a2f0d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20210531100024_create_slots.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20210531100024_create_slots.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +36,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.387289" />
   </component>
   <component name="RunAnythingCache">
     <myKeys>
@@ -164,7 +167,10 @@
       <workItem from="1622374000159" duration="667000" />
       <workItem from="1622376304660" duration="513000" />
       <workItem from="1622376914725" duration="971000" />
-      <workItem from="1622451730179" duration="5410000" />
+      <workItem from="1622451730179" duration="5504000" />
+      <workItem from="1622593060962" duration="840000" />
+      <workItem from="1622594160810" duration="115000" />
+      <workItem from="1622594444071" duration="57000" />
     </task>
     <servers />
   </component>
