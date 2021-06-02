@@ -2,7 +2,7 @@
 
 class SlotsController < ApplicationController
   before_action :set_slot, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[update edit destroy]
+  before_action :authenticate_user!, only: %i[show update edit destroy create]
   before_action :set_associated_newsletter
 
   # GET /slots or /slots.json
