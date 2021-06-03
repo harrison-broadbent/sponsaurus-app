@@ -3,7 +3,7 @@
 <div class="display-card">
   <div class="display-card__data">
     <h2><%= @slot.formatted_date %></h2>
-    <p>Price: $<%= @slot.price_cents %></p>
+    <p>Price: <%= @slot.price.format %></p>
     <p>Booked?: <%= @slot.booked? %></p>
   </div>
 

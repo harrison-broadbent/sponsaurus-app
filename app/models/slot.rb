@@ -9,6 +9,9 @@
 #       t.datetime :publish_date
 #       t.references :newsletter
 class Slot < ApplicationRecord
+
+  monetize :price_cents
+
   # Associations
   belongs_to :newsletter
   has_one :booking, dependent: :destroy

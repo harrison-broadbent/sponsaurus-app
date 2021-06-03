@@ -78,6 +78,6 @@ class SlotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def slot_params
-    params.require(:slot).permit(:price_cents, :publish_date)
+    params.require(:slot).permit(:price, :publish_date)
   end
 end
