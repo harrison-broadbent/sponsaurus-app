@@ -8,28 +8,25 @@
 #       t.boolean :booked
 #       t.datetime :publish_date
 #       t.references :newsletter
-#
-#       # info about the booker -
-#       t.string :booker_name
-#       t.string :booker_email
-#       t.string :booker_billing_address
-#
-#       # info contained in a booked slot -
-#       t.string :advert_title
-#       t.string :advert_product
-#       t.string :advert_url
-#       t.string :advert_image_url
-#       t.text :advert_description
 class Slot < ApplicationRecord
-
   # Associations
   belongs_to :newsletter
-  has_one :booking
-  default_scope -> { order(publish_date: :desc) }
+  has_one :booking, dependent: :destroy
+  default_scope -> { order(publish_date: :asc) }
 
   # Validations
+  validates :publish_date, presence: true
+  validates :price_cents, presence: true, numericality: true
+
+  validate :publish_date_in_the_future
 
   # Methods
+  def publish_date_in_the_future
+    unless publish_date.nil?
+      errors.add(:publish_date, 'The publish date must be in the future.') if publish_date < Time.now
+    end
+  end
+
   def formatted_date
     publish_date.strftime('%B %e, %Y')
   end

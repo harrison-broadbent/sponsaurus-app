@@ -7,6 +7,15 @@
 #       t.text :statistics  -> Statistics such as open rate.
 #       t.integer :user_id  -> User ID for the belongs_to relationship.
 class Newsletter < ApplicationRecord
+  # Associations
   belongs_to :user
-  has_many :slots
+  has_many :slots, dependent: :destroy
+
+  # Validations
+
+  validates :name, presence: true
+  validates :information, presence: true
+  validates :statistics, presence: true
+
+  # Methods
 end
