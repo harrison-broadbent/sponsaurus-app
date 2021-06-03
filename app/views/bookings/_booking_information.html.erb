@@ -1,15 +1,20 @@
+<h2 class="-heading-text">Booker Information:</h2>
 <div class="display-card__data">
-  <h2>Booker Information:</h2>
   <p>Booker name: <%= booking.booker_name %></p>
   <p>Booker email: <%= booking.booker_email %></p>
   <p>Booker address: <%= booking.booker_billing_address %></p>
 </div>
 
+<h2 class="-heading-text">Advertisement Information:</h2>
 <div class="display-card__data">
-  <h2>Advertisement Information:</h2>
-  <p>Product: <%= booking.advert_product %></p>
-  <p>Url: <%= booking.advert_url %></p>
-  <p>Image Url: <%= booking.advert_image_url %></p>
-  <p>Title: <%= booking.advert_title %></p>
-  <p>Description: <%= booking.advert_description %></p>
+  <p><span class="-bold-text">Product: </span><%= booking.advert_product %></p>
+  <p><span class="-bold-text">Product website: </span><%= link_to booking.advert_url, booking.advert_url %></p>
+  <p><span class="-bold-text">Title: </span><%= booking.advert_title %></p>
+  <p><span class="-bold-text">Image url: </span><%= link_to booking.advert_image_url, booking.advert_image_url %></p>
+  <p class="-bold-text">Image:</p>
+  <div class="display-card__image">
+    <%= image_tag booking.advert_image_url %>
+  </div>
+  <p class="-bold-text">Description: </p>
+  <p class="-width-50"><%= booking.advert_description %></p>
 </div>

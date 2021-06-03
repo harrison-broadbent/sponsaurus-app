@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sponsaurus-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sponsaurus-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/newsletters_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/newsletters_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bookings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bookings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/utils/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/utils/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/bookings/_booking_information.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/bookings/_booking_information.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/bookings/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/bookings/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/bookings/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/bookings/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_header.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/newsletters/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +167,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622595068727</updated>
       <workItem from="1622595072171" duration="1725000" />
+      <workItem from="1622682727995" duration="4843000" />
     </task>
     <servers />
   </component>

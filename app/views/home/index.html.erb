@@ -1,7 +1,8 @@
 <h1>Sponsaurus</h1>
-<% if current_user %>
-  <h3><%= current_user.name %></h3>
-  <h3><%= current_user.email %></h3>
-  <%= image_tag(current_user.image) unless current_user.image.nil? %>
-  <%= link_to "View your newsletters.", newsletters_path%>
+
+<% if user_signed_in? %>
+  <%= render 'users/user_details' %>
+  <% current_user.newsletters.each do |newsletter| %>
+    <%= render 'newsletters/newsletter_information', newsletter: newsletter %>
+  <% end %>
 <% end %>
