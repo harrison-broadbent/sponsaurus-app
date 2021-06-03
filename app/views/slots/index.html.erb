@@ -10,14 +10,27 @@
       <p>Price: $<%= slot.price_cents %></p>
       <p>Booked?: <%= slot.booked? %></p>
       <div class="display-card__links">
+
+      <% if current_user_owns_slot?(slot) %>
         <p><%= link_to 'Show', [@newsletter, slot] %></p>
         <p><%= link_to 'Edit', [:edit, @newsletter, slot] %></p>
         <p><%= link_to 'Destroy', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+
+      <% if current_user_owns_slot?(slot) %>
         <% if slot.booked? %>
           <p><%= link_to "View booking information", [slot, slot.booking] %></p>
         <% else %>
+          <p>Available to book.</p>
+        <% end %>
+      <% else %>
+        <% if slot.booked? %>
+          <p>This slot has already been booked.</p>
+        <% else %>
           <p><%= link_to "Book this slot", new_slot_booking_path(slot) %></p>
         <% end %>
+      <% end %>
+
       </div>
     </div>
   </div>

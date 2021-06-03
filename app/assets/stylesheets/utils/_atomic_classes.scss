@@ -1,0 +1,28 @@
+// Classes that can be applied to any element
+@import "colors";
+* {
+  .-padded {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .-subheading-text {
+    color: $grey-darker;
+    font-weight: lighter;
+  }
+
+  .-width-50 {
+    width: 50%;
+  }
+
+  .-bold-text {
+    font-weight: bolder;
+  }
+
+  .-heading-text {
+    font-weight: bold;
+    font-size: 1.25rem;
+    //padding-top: 1rem;
+    //padding-bottom: 1rem;
+  }
+}

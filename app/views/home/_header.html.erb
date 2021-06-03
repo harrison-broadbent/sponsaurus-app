@@ -1,9 +1,9 @@
 <div class="header">
-  <div class="left-align">
+  <div class="header__left-align">
     <%= link_to 'Home', root_path, class: 'nav-item' %>
     <%#= link_to 'Posts', microposts_path, class: 'nav-item' %>
   </div>
-  <div class="right-align">
+  <div class="header__right-align">
     <% if user_signed_in? %>
       <%= link_to current_user.name, user_path(current_user), class: 'nav-item'  %>
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-item' %>
