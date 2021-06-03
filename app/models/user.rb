@@ -6,9 +6,10 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[google_oauth2]
 
   # Associations
-  has_many :newsletters
+  has_many :newsletters, dependent: :destroy
 
   # Validations
+  validates :name, presence: true
 
   # Methods
   def self.from_omniauth(auth)
