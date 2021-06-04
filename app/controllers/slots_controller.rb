@@ -47,7 +47,7 @@ class SlotsController < ApplicationController
   def update
     respond_to do |format|
       if @slot.update(slot_params)
-        format.html { redirect_to @slot, notice: 'Slot was successfully updated.' }
+        format.html { redirect_to [@newsletter, @slot], notice: 'Slot was successfully updated.' }
         format.json { render :show, status: :ok, location: @slot }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -78,6 +78,6 @@ class SlotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def slot_params
-    params.require(:slot).permit(:price_cents, :publish_date)
+    params.require(:slot).permit(:price, :publish_date)
   end
 end

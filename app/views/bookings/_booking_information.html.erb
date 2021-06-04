@@ -1,20 +1,29 @@
-<h2 class="-heading-text">Booker Information:</h2>
-<div class="display-card__data">
-  <p>Booker name: <%= booking.booker_name %></p>
-  <p>Booker email: <%= booking.booker_email %></p>
-  <p>Booker address: <%= booking.booker_billing_address %></p>
-</div>
-
-<h2 class="-heading-text">Advertisement Information:</h2>
-<div class="display-card__data">
-  <p><span class="-bold-text">Product: </span><%= booking.advert_product %></p>
-  <p><span class="-bold-text">Product website: </span><%= link_to booking.advert_url, booking.advert_url %></p>
-  <p><span class="-bold-text">Title: </span><%= booking.advert_title %></p>
-  <p><span class="-bold-text">Image url: </span><%= link_to booking.advert_image_url, booking.advert_image_url %></p>
-  <p class="-bold-text">Image:</p>
-  <div class="display-card__image">
-    <%= image_tag booking.advert_image_url %>
+<div class="display-card">
+  <h2 class="-heading-text">Booker Information:</h2>
+  <div class="display-card__data">
+    <p>Booker name: <%= booking.booker_name %></p>
+    <p>Booker email: <%= booking.booker_email %></p>
+    <p>Booker address: <%= booking.booker_billing_address %></p>
   </div>
-  <p class="-bold-text">Description: </p>
-  <p class="-width-50"><%= booking.advert_description %></p>
+
+  <h2 class="-heading-text">Advertisement Information:</h2>
+  <div class="display-card__data">
+    <p><span class="-bold-text">Product: </span><%= booking.advert_product %></p>
+    <p><span class="-bold-text">Product website: </span><%= link_to booking.advert_url, booking.advert_url %></p>
+    <p><span class="-bold-text">Title: </span><%= booking.advert_title %></p>
+    <p><span class="-bold-text">Image url: </span><%= link_to booking.advert_image_url, booking.advert_image_url %></p>
+    <p class="-bold-text">Image:</p>
+
+    <div class="display-card__image">
+      <%= image_tag booking.advert_image_url %>
+    </div>
+
+    <p class="-bold-text">Description: </p>
+    <p class="-width-50"><%= booking.advert_description %></p>
+  </div>
+
+  <div class="display-card__links">
+    <%= link_to 'Edit', [:edit, @slot, @booking] %>
+    <%= link_to 'Remove booking', [@slot, @booking], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 </div>
