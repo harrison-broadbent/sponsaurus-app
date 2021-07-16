@@ -6,8 +6,13 @@ class SlotsController < ApplicationController
   before_action :set_associated_newsletter
 
   # GET /slots or /slots.json
+  # Owner can see all their slots, viewers can only see slots in the future
   def index
-    @slots = Slot.all
+    @slots = if helpers.current_user_owns_slot?(Slot.first)
+               Slot.all
+             else
+               Slot.where('publish_date >= ?', Date.today)
+             end
   end
 
   # GET /slots/1 or /slots/1.json

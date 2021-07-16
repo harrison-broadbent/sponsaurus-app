@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Slot: Represents a booking slot for a newsletter
+# Slot: Represents a sponsorship slot for a newsletter
 # Fields ->
 #
 #       # general info for the slot -
@@ -14,8 +14,7 @@ class Slot < ApplicationRecord
 
   # Associations
   belongs_to :newsletter
-  has_one :booking, dependent: :destroy
-  default_scope -> { order(publish_date: :asc) }
+  default_scope -> { order(publish_date: :desc) }
 
   # Validations
   validates :publish_date, presence: true
@@ -32,9 +31,5 @@ class Slot < ApplicationRecord
 
   def formatted_date
     publish_date.strftime('%B %e, %Y')
-  end
-
-  def booked?
-    !booking.nil?
   end
 end
