@@ -8,11 +8,9 @@ class SlotsController < ApplicationController
   # GET /slots or /slots.json
   # Owner can see all their slots, viewers can only see slots in the future
   def index
-    @slots = if helpers.current_user_owns_slot?(Slot.first)
-               Slot.all
-             else
-               Slot.where('publish_date >= ?', Date.today)
-             end
+    @slots = @newsletter.slots
+    @future_slots = @newsletter.slots.where('publish_date > ?', Date.today)
+    @past_slots = @newsletter.slots.where('publish_date <= ?', Date.today)
   end
 
   # GET /slots/1 or /slots/1.json

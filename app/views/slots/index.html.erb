@@ -3,8 +3,14 @@
 <h1>Slots</h1>
 <h2>Newsletter: <%= @newsletter.name %></h2>
 
-<% @slots.each do |slot| %>
-  <%= render 'slot_information', slot: slot %>
+<%# @slots.each do |slot| %>
+  <%#= render 'slot_information', slot: slot %>
+<%# end %>
+
+<% if current_user_owns_slot? @slots.first %>
+  <%= render 'slots_list', :locals => { :future_slots => @future_slots, :past_slots => @past_slots } %>
+<% else %>
+  <%= render 'slots_list', :locals => { :future_slots => @future_slots } %>
 <% end %>
 
 <% if current_user_owns_slot? @slots.first %>

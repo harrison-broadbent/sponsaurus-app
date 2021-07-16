@@ -6,44 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bookings.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/bookings_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/booking.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/slot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/slot.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/_booking.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/_booking_information.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/_slot_information.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slot_information.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_user_details.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user_details.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20210531095941_create_newsletters.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20210531095941_create_newsletters.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20210602093015_create_bookings.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/bookings_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/booking_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/bookings_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/routing/bookings_routing_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/bookings/edit.html.erb_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/bookings/index.html.erb_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/bookings/new.html.erb_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/bookings/show.html.erb_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +157,7 @@
       <workItem from="1622855941467" duration="1198000" />
       <workItem from="1624494334600" duration="7301000" />
       <workItem from="1626333963585" duration="2290000" />
-      <workItem from="1626390763638" duration="5232000" />
+      <workItem from="1626390763638" duration="6732000" />
     </task>
     <servers />
   </component>
