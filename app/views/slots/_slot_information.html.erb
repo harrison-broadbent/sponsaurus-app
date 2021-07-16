@@ -1,9 +1,9 @@
-<div class="display-card">
-  <div class="display-card__data">
+<div class="short-card" >
+  <div class="short-card__data">
     <h2><%= slot.formatted_date %></h2>
     <p>Price: <%= slot.price.format %></p>
-    <p>Booked?: <%= slot.booked? %></p>
-    <div class="display-card__links">
+    <p>Booked?: <%= generate_booked_string(slot) %></p>
+    <div class="short-card__links">
 
       <% if current_user_owns_slot?(slot) %>
         <p><%= link_to 'Show', [@newsletter, slot] %></p>
@@ -13,7 +13,7 @@
 
       <% if current_user_owns_slot?(slot) %>
         <% if slot.booked? %>
-          <p><%= link_to "View booking information", [slot, slot.booking] %></p>
+          <p>Slot is booked.</p>
         <% else %>
           <p>Available to book.</p>
         <% end %>
@@ -21,7 +21,7 @@
         <% if slot.booked? %>
           <p>This slot has already been booked.</p>
         <% else %>
-          <p><%= link_to "Book this slot", new_slot_booking_path(slot) %></p>
+          <p><%= link_to "Inquire about this slot", generate_mailto_string(@newsletter, slot) %></p>
         <% end %>
       <% end %>
 

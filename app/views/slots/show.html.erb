@@ -8,8 +8,7 @@
   </div>
 
   <% if @slot.booked? %>
-    <h2>Information: </h2>
-    <%= render 'bookings/booking_information', booking: @slot.booking %>
+    <p>Slot already booked.</p>
   <% end %>
 
   <div class="display-card__links">

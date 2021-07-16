@@ -15,25 +15,27 @@ ActiveRecord::Schema.define(version: 2021_06_02_093015) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "slot_id"
-    t.string "booker_name"
-    t.string "booker_email"
-    t.string "booker_billing_address"
-    t.string "advert_title"
-    t.string "advert_product"
-    t.string "advert_url"
-    t.string "advert_image_url"
-    t.text "advert_description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["slot_id"], name: "index_bookings_on_slot_id"
-  end
+  # create_table "bookings", force: :cascade do |t|
+  #   t.bigint "slot_id"
+  #   t.string "booker_name"
+  #   t.string "booker_email"
+  #   t.string "booker_billing_address"
+  #   t.string "advert_title"
+  #   t.string "advert_product"
+  #   t.string "advert_url"
+  #   t.string "advert_image_url"
+  #   t.text "advert_description"
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  #   t.index ["slot_id"], name: "index_bookings_on_slot_id"
+  # end
 
   create_table "newsletters", force: :cascade do |t|
     t.string "name"
     t.text "information"
     t.text "statistics"
+    t.string "email_template_subject"
+    t.text "email_template_body"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

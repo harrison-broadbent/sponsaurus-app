@@ -7,7 +7,9 @@
   flex-direction: row;
   justify-content: space-between;
   &__left-align{
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   &__right-align {
