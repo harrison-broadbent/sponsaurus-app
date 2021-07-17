@@ -4,6 +4,12 @@ Rails.application.routes.draw do
     resources :slots
   end
 
+  # Route to toggle slot booked status
+  resources :slots do
+    patch :toggle_booking_status, on: :member
+  end
+
+
   # devise_for must sit above resources :users
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [:show]
