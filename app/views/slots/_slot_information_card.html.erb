@@ -6,17 +6,17 @@
     <div class="short-card__links">
 
       <% if current_user_owns_slot?(slot) %>
-        <p><%= link_to 'Show', [@newsletter, slot] %></p>
-        <p><%= link_to 'Edit', [:edit, @newsletter, slot] %></p>
-        <p><%= link_to 'Destroy', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p><%= link_to 'Delete this slot', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
       <% end %>
 
       <% if current_user_owns_slot?(slot) %>
+
         <% if slot.booked? %>
-          <p>Slot is booked.</p>
+          <%= link_to "Change slot to available.", toggle_booking_status_slot_path(slot), method: :patch, data: { confirm: 'Are you sure? This slot will become available.' }, class: '-color-green' %>
         <% else %>
-          <p>Available to book.</p>
+          <%= link_to "Change slot to booked.", toggle_booking_status_slot_path(slot), method: :patch, data: { confirm: 'Are you sure? This slot will become unavailable' }, class: '-color-red' %>
         <% end %>
+
       <% else %>
         <% if slot.booked? %>
           <p>This slot has already been booked.</p>

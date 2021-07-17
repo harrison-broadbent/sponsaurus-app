@@ -1,19 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Slots</h1>
+<% if current_user_owns_slot? @slots.first %>
+  <%= link_to 'New Slot', new_newsletter_slot_path(@newsletter, @slot), class: '-bold-text' %>
+<% end %>
+
 <h2>Newsletter: <%= @newsletter.name %></h2>
 
-<%# @slots.each do |slot| %>
-  <%#= render 'slot_information', slot: slot %>
-<%# end %>
+<%= render 'slots_list', :locals => { :future_slots => @future_slots, :past_slots => @past_slots } %>
 
-<% if current_user_owns_slot? @slots.first %>
-  <%= render 'slots_list', :locals => { :future_slots => @future_slots, :past_slots => @past_slots } %>
-<% else %>
-  <%= render 'slots_list', :locals => { :future_slots => @future_slots } %>
-<% end %>
-
-<% if current_user_owns_slot? @slots.first %>
-  <%= link_to 'New Slot', new_newsletter_slot_path(@newsletter, @slot) %>
-<% end %>
 

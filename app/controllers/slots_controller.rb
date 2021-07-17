@@ -1,16 +1,27 @@
 # frozen_string_literal: true
 
 class SlotsController < ApplicationController
-  before_action :set_slot, only: %i[show edit update destroy]
+  before_action :set_slot, only: %i[show edit update destroy toggle_booking_status]
   before_action :authenticate_user!, only: %i[show update edit destroy create]
   before_action :set_associated_newsletter
+
+  # Lets the slot owner toggle a slot between booked and open.
+  # Reloads the page on each redirect.
+  def toggle_booking_status
+    slot = Slot.find(params[:id])
+    slot.update(booked: !slot.booked)
+    redirect_to newsletter_slots_path(@newsletter), notice: 'Slot was successfully updated.'
+  end
 
   # GET /slots or /slots.json
   # Owner can see all their slots, viewers can only see slots in the future
   def index
     @slots = @newsletter.slots
     @future_slots = @newsletter.slots.where('publish_date > ?', Date.today)
-    @past_slots = @newsletter.slots.where('publish_date <= ?', Date.today)
+
+    @past_slots = if helpers.current_user_owns_slot? @slots.first
+                    @newsletter.slots.where('publish_date <= ?', Date.today)
+                  end
   end
 
   # GET /slots/1 or /slots/1.json
@@ -76,7 +87,11 @@ class SlotsController < ApplicationController
   end
 
   def set_associated_newsletter
-    @newsletter = Newsletter.find(params[:newsletter_id])
+    @newsletter = if params[:newsletter_id]
+                    Newsletter.find(params[:newsletter_id])
+                  else
+                    @slot.newsletter
+                  end
   end
 
   # Only allow a list of trusted parameters through.
