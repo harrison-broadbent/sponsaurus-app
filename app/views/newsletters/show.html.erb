@@ -1,7 +1,0 @@
-<p id="notice"><%= notice %></p>
-
-<%= render 'newsletters/newsletter_information', newsletter: @newsletter %>
-
-<% if current_user_owns_newsletter?(@newsletter) %>
-  <%= link_to 'Back', newsletters_path %>
-<% end %>

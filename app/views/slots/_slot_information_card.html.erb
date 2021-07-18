@@ -6,7 +6,7 @@
     <div class="short-card__links">
 
       <% if current_user_owns_slot?(slot) %>
-        <p><%= link_to 'Delete this slot', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p><%= link_to '[X] Delete this slot', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
       <% end %>
 
       <% if current_user_owns_slot?(slot) %>
@@ -19,9 +19,13 @@
 
       <% else %>
         <% if slot.booked? %>
-          <p>This slot has already been booked.</p>
+          <p class="-padded -bg-color-light-red -color-dark-red">
+            This slot has been booked :(
+          </p>
         <% else %>
-          <p><%= link_to "Inquire about this slot", generate_mailto_string(@newsletter, slot) %></p>
+          <p class="-padded -color-dark-green -bg-color-light-green">
+            <%= link_to "Slot Available. Book Now →", generate_mailto_string(@newsletter, slot), target: "_blank" %>
+          </p>
         <% end %>
       <% end %>
 

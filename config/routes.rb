@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :newsletters do
+  resources :newsletters, only: %i[edit new update create destroy] do
     resources :slots
   end
 
