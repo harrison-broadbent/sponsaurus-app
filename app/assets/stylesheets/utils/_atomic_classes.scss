@@ -32,7 +32,24 @@
     color: $green;
   }
 
+  .-color-dark-green {
+    color: $green-darker;
+  }
+
+  .-bg-color-light-green {
+    background-color: $green-lighter;
+  }
+
   .-color-red {
     color: $red;
   }
+
+  .-color-dark-red {
+    color: $red-darker;
+  }
+
+  .-bg-color-light-red {
+    background-color: $red-lighter;
+  }
+
 }
