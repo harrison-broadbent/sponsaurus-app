@@ -7,6 +7,11 @@
 #       t.text :statistics  -> Statistics such as open rate.
 #       t.integer :user_id  -> User ID for the belongs_to relationship.
 class Newsletter < ApplicationRecord
+
+  # Pretty URL Slugs
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   # Associations
   belongs_to :user
   has_many :slots, dependent: :destroy

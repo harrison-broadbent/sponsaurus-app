@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # User money_rails to handle currency within the app
 gem 'money-rails'
 
+# Pretty urls using slugs:
+# newsletters/1/slots ~> newsletters/theslice/slots
+gem 'friendly_id', '~> 5.4.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :newsletters, only: %i[edit new update create destroy] do
+  # Custom / Non-standard routes
+  get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
+
+  resources :newsletters, path: '/', only: %i[edit new update create destroy] do
     resources :slots
   end
 
@@ -15,4 +18,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
 end
