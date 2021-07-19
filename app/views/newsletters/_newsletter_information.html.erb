@@ -8,7 +8,7 @@
   <div class="display-card__links">
     <% if current_user_owns_newsletter?(newsletter) %>
       <%= link_to 'Edit', edit_newsletter_path(newsletter) %>
-      <%= link_to "View slots for #{newsletter.name}", newsletter_slots_path(newsletter) %>
+      <%= link_to "View slots for #{newsletter.name}", pretty_newsletter_slots_path(newsletter) %>
     <% end %>
   </div>
 

@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/newsletters_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/newsletters_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/newsletters/_newsletter_information.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/_newsletter_information.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/newsletters/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/_slot_information_card.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slot_information_card.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +38,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Ruby" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/javascript/packs" />
+    </key>
   </component>
   <component name="RunManager" selected="Rails.Development: sponsaurus-app">
     <configuration name="Development: sponsaurus-app" type="RailsRunConfigurationType" factoryName="Rails">
@@ -166,6 +164,7 @@
       <workItem from="1626390763638" duration="8696000" />
       <workItem from="1626481554570" duration="4635000" />
       <workItem from="1626570663699" duration="4080000" />
+      <workItem from="1626686768176" duration="5219000" />
     </task>
     <servers />
   </component>

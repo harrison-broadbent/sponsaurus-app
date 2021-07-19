@@ -10,7 +10,7 @@ class SlotsController < ApplicationController
   def toggle_booking_status
     slot = Slot.find(params[:id])
     slot.update(booked: !slot.booked)
-    redirect_to newsletter_slots_path(@newsletter), notice: 'Slot was successfully updated.'
+    redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was successfully updated.'
   end
 
   # GET /slots or /slots.json
@@ -74,7 +74,7 @@ class SlotsController < ApplicationController
   def destroy
     @slot.destroy
     respond_to do |format|
-      format.html { redirect_to newsletter_slots_path(@newsletter), notice: 'Slot was successfully destroyed.' }
+      format.html { redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -88,7 +88,7 @@ class SlotsController < ApplicationController
 
   def set_associated_newsletter
     @newsletter = if params[:newsletter_id]
-                    Newsletter.find(params[:newsletter_id])
+                    Newsletter.friendly.find(params[:newsletter_id])
                   else
                     @slot.newsletter
                   end
