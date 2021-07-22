@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/packs/slots.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/slots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_slot_information_card.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slot_information_card.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_slots_list.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slots_list.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
