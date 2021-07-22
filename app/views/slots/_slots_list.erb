@@ -2,13 +2,13 @@
 
 <h2>Future Slots:</h2>
 <% @future_slots.each do |slot| %>
-  <%= render 'slot_information_card', slot: slot %>
+  <%= render 'slot_information_card', slot: slot, old_slot: false%>
 <% end %>
 
 <% if @past_slots %>
   <hr>
   <h2>Past Slots:</h2>
   <% @past_slots.each do |slot| %>
-    <%= render 'slot_information_card', slot: slot %>
+    <%= render 'slot_information_card', slot: slot, old_slot: true %>
   <% end %>
 <% end %>

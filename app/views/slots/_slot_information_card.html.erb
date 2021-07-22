@@ -1,14 +1,21 @@
-<div class="short-card" >
-  <div class="short-card__data">
+<!-- Partial for the cards used to display newsletter booking slots -->
+<!-- old_slot indicates whether a slot publish_date has already passed-->
+
+
+<div class="short-card">
+
+  <div class="<%= class_names("short-card__data", {"-faded": old_slot}) %>">
     <h2><%= slot.formatted_date %></h2>
     <p>Price: <%= slot.price.format %></p>
     <p>Booked?: <%= generate_booked_string(slot) %></p>
-    <div class="short-card__links">
+  </div>
 
-      <% if current_user_owns_slot?(slot) %>
-        <p><%= link_to '[X] Delete this slot', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <% end %>
+  <div class="short-card__links">
+    <% if current_user_owns_slot?(slot) %>
+      <p><%= link_to '[X] Delete this slot', [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure you want to delete this slot?' } %></p>
+    <% end %>
 
+    <% if not old_slot %>
       <% if current_user_owns_slot?(slot) %>
 
         <% if slot.booked? %>
@@ -19,16 +26,16 @@
 
       <% else %>
         <% if slot.booked? %>
-          <p class="-padded -bg-color-light-red -color-dark-red">
+          <p class="-padded-half -bg-color-light-red -color-dark-red">
             This slot has been booked :(
           </p>
         <% else %>
-          <p class="-padded -color-dark-green -bg-color-light-green">
+          <p class="-padded-half -color-dark-green -bg-color-light-green">
             <%= link_to "Slot Available. Book Now →", generate_mailto_string(@newsletter, slot), target: "_blank" %>
           </p>
         <% end %>
       <% end %>
-
-    </div>
+    <% end %>
   </div>
+
 </div>

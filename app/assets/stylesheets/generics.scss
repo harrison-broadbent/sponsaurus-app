@@ -38,24 +38,41 @@
 .short-card {
   display: flex;
   flex-direction: row;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  border: 1px solid black;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border: 1px solid $grey-darker;
+  border-radius: 0.75rem;
   background-color: $grey-lightest;
 
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .-faded {
+    color: $grey-dark;
+    font-weight: lighter;
+    * {
+      color: inherit;
+    }
+  }
+
   &__data {
-    background-color: $grey-lighter;
+    width: 70%;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    background-color: $grey-lighter;
   }
 
   &__links {
+    width: 30%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 
     // give each child link some padding
     > * {

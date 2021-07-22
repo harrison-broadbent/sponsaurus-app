@@ -8,7 +8,7 @@
   <%= link_to '> New Slot <', new_newsletter_slot_path(@newsletter, @slot), class: '-padded -bold-text' %>
 <% end %>
 
-<button id="button__share-link" >Copy link to this page.</button>
+<button id="button__share-link" >Share a link to this page.</button>
 <%= render 'slots_list', :locals => { :future_slots => @future_slots, :past_slots => @past_slots } %>
 
 
