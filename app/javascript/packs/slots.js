@@ -1,7 +1,9 @@
+// Javascript file for the Slots views.
+
 // Copies the current url to the users clipboard,
 // so that they can share their slots pages easily.
 
-function shareURL() {
+function copyShareURL() {
     // creates a temporary element and copies from it.
 
     let temp_element = document.createElement('input'),
@@ -20,5 +22,5 @@ function shareURL() {
     btn.innerText = "Copied to clipboard!"
 }
 
-document.getElementById("button__share-link").addEventListener('click', shareURL)
+document.getElementById("button__share-link").addEventListener('click', copyShareURL)
 console.log("loaded slots.js")
