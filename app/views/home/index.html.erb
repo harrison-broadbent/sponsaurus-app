@@ -1,8 +1,13 @@
 
-
 <% if user_signed_in? %>
   <%= render 'users/user_details' %>
-  <% current_user.newsletters.each do |newsletter| %>
-    <%= render 'newsletters/newsletter_information', newsletter: newsletter %>
+
+  <% if current_user.newsletters.empty? %>
+    <%= link_to "> Create a newsletter <", new_newsletter_path %>
+  <% else %>
+    <% current_user.newsletters.each do |newsletter| %>
+      <%= render 'newsletters/newsletter_information', newsletter: newsletter %>
+    <% end %>
   <% end %>
+
 <% end %>
