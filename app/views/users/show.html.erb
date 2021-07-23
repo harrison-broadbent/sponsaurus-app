@@ -1,6 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
 <%= render 'users/user_details' %>
 <% current_user.newsletters.each do |newsletter| %>
   <%= render 'newsletters/newsletter_information', newsletter: newsletter %>
