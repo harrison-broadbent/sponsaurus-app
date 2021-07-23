@@ -19,7 +19,7 @@ class SlotsController < ApplicationController
     @slots = @newsletter.slots
     @future_slots = @newsletter.slots.where('publish_date > ?', DateTime.current.end_of_day)
 
-    @past_slots = if helpers.current_user_owns_slot? @slots.first
+    @past_slots = if helpers.current_user_owns_newsletter? @newsletter
                     @newsletter.slots.where('publish_date <= ?', DateTime.current.end_of_day)
                   end
   end
