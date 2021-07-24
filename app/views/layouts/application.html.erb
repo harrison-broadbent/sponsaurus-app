@@ -12,12 +12,20 @@
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class="bg-white">
+
     <%= render 'home/header' %>
+    <div class="py-10">
+      <main>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-    <p id="notice" class="text-green-500"><%= notice %></p>
-    <p id="alert" class="text-red-500"><%= alert %></p>
+          <p id="notice" class="text-green-500"><%= notice %></p>
+          <p id="alert" class="text-red-500"><%= alert %></p>
+          <%= yield %>
 
-    <%= yield %>
+        </div>
+      </main>
+    </div>
+
   </body>
 </html>
