@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sponsaurus-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sponsaurus-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/generics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/utils/_atomic_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/packs/slots.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/slots.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/_slot_information_card.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slot_information_card.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/_slots_list.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slots_list.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_scaffolds.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +173,7 @@
       <workItem from="1626481554570" duration="4635000" />
       <workItem from="1626570663699" duration="4080000" />
       <workItem from="1626686768176" duration="5219000" />
+      <workItem from="1627091673410" duration="1300000" />
     </task>
     <servers />
   </component>

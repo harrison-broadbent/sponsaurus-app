@@ -7,7 +7,7 @@
 
 <% if @past_slots %>
   <hr>
-  <h2>Past Slots:</h2>
+  <h2 class="">Past Slots:</h2>
   <% @past_slots.each do |slot| %>
     <%= render 'slot_information_card', slot: slot, old_slot: true %>
   <% end %>

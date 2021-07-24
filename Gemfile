@@ -73,3 +73,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
 end
+
+gem "tailwindcss-rails", "~> 0.3.3"
