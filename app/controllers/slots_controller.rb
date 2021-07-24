@@ -17,11 +17,8 @@ class SlotsController < ApplicationController
   # Owner can see all their slots, viewers can only see slots in the future
   def index
     @slots = @newsletter.slots
-    @future_slots = @newsletter.slots.where('publish_date > ?', DateTime.current.end_of_day)
-
-    @past_slots = if helpers.current_user_owns_slot? @slots.first
-                    @newsletter.slots.where('publish_date <= ?', DateTime.current.end_of_day)
-                  end
+    @future_slots = @newsletter.slots.reject(&:expired?)
+    @past_slots = (@newsletter.slots.select(&:expired?) if helpers.current_user_owns_slot? @slots.first)
   end
 
   # GET /slots/1 or /slots/1.json
@@ -74,7 +71,7 @@ class SlotsController < ApplicationController
   def destroy
     @slot.destroy
     respond_to do |format|
-      format.html { redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was successfully destroyed.' }
+      format.html { redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was deleted.' }
       format.json { head :no_content }
     end
   end

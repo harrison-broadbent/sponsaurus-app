@@ -1,15 +1,15 @@
 <% if current_user %>
 
   <div class="display-card">
-    <h1 class="-heading-text">Profile information:</h1>
+    <h1 class="font-semibold">Profile information:</h1>
 
     <div class="display-card__image">
       <%= image_tag(current_user.image) unless current_user.image.nil? %>
     </div>
 
     <div class="display-card__data">
-      <p><span class="-bold-text">Name: </span><%= current_user.name %></p>
-      <p><span class="-bold-text">Email: </span><%= current_user.email %></p>
+      <p><span class="font-bold">Name: </span><%= current_user.name %></p>
+      <p><span class="font-bold">Email: </span><%= current_user.email %></p>
     </div>
 
   </div>

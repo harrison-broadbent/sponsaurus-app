@@ -21,4 +21,14 @@ module SlotsHelper
       'No'
     end
   end
+
+  def days_until_or_after_published_string(slot)
+    if slot.days_until_published.positive?
+      "In #{pluralize(slot.days_until_published, 'day')}"
+    elsif slot.days_until_published.negative?
+      "#{pluralize(-slot.days_until_published, 'day')} ago"
+    else
+      'Today!'
+    end
+  end
 end

@@ -1,14 +1,11 @@
 <!-- Render the list of slots, showing only future slots to a viewer. -->
 
 <h2>Future Slots:</h2>
-<% @future_slots.each do |slot| %>
-  <%= render 'slot_information_card', slot: slot, old_slot: false%>
-<% end %>
+<%= render 'slot_information_card', slots: @future_slots %>
 
 <% if @past_slots %>
   <hr>
   <h2 class="">Past Slots:</h2>
-  <% @past_slots.each do |slot| %>
-    <%= render 'slot_information_card', slot: slot, old_slot: true %>
-  <% end %>
+  <%= render 'slot_information_card', slots: @past_slots %>
 <% end %>
+

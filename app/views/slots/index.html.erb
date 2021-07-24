@@ -1,11 +1,10 @@
 
 
-<p id="notice"><%= notice %></p>
 
 
 <%= render 'newsletters/newsletter_information', newsletter: @newsletter %>
 <% if current_user_owns_slot? @slots.first %>
-  <%= link_to '> New Slot <', new_newsletter_slot_path(@newsletter, @slot), class: '-padded -bold-text' %>
+  <%= link_to '> New Slot <', new_newsletter_slot_path(@newsletter, @slot), class: 'm-2 p-2 font-semibold' %>
 <% end %>
 
 <button id="button__share-link" >Share a link to this page.</button>

@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
@@ -15,8 +15,8 @@
   <body>
     <%= render 'home/header' %>
 
-<!--    <p class="notice"><%#= notice %></p>-->
-<!--    <p class="alert"><%#= alert %></p>-->
+    <p id="notice" class="text-green-500"><%= notice %></p>
+    <p id="alert" class="text-red-500"><%= alert %></p>
 
     <%= yield %>
   </body>

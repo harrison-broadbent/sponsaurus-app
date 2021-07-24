@@ -1,14 +1,33 @@
+// module.exports = {
+//   mode: 'jit',
+//   purge: [
+//     './app/views/**/*.erb',
+//     './app/views/**/*.html'
+//   ],
+//   darkMode: false, // or 'media' or 'class'
+//   theme: {
+//     extend: {},
+//   },
+//   variants: {
+//     extend: {},
+//   },
+//   plugins: [],
+//   important: true
+// }
+
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './app/views/**/*.erb'
-  ],
+  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter var'],
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
+  important: true
 }
