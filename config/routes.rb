@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  # Custom / Non-standard routes
-  get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
-
   resources :newsletters, path: '/', only: %i[edit new update create destroy] do
     resources :slots
   end
+
+  # Custom / Non-standard routes
+  get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
 
   # Route to toggle slot booked status
   resources :slots do

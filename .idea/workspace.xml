@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/_form_alert.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/newsletters_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/newsletters_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/stylesheets/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/stylesheets/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/newsletter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/newsletter.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_alert.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_notice.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_notice.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/newsletters/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/newsletters/_newsletter_information.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/_newsletter_information.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/newsletters/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/newsletters/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/newsletters/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/slots/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/slots/_slot_information_card_row.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slot_information_card_row.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_slots_list.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_slots_list.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_user_details.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user_profile_card.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/devise.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/devise.en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +179,7 @@
       <workItem from="1626686768176" duration="5219000" />
       <workItem from="1627091673410" duration="7310000" />
       <workItem from="1627103959353" duration="19516000" />
-      <workItem from="1627175177513" duration="6906000" />
+      <workItem from="1627175177513" duration="13895000" />
     </task>
     <servers />
   </component>

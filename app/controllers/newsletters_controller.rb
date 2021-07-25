@@ -2,7 +2,7 @@
 
 class NewslettersController < ApplicationController
   before_action :set_newsletter, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[index edit update destroy]
+  before_action :authenticate_user!, only: %i[index edit update destroy new create]
 
   # GET /newsletters/new
   def new
@@ -18,7 +18,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        format.html { redirect_to root_path, notice: 'Newsletter was successfully created.' }
+        format.html { redirect_to root_path, notice: "#{@newsletter.name} has been created." }
         # format.json { render :show, status: :created, location: @newsletter }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -31,7 +31,7 @@ class NewslettersController < ApplicationController
   def update
     respond_to do |format|
       if @newsletter.update(newsletter_params)
-        format.html { redirect_to root_path, notice: 'Newsletter was successfully updated.' }
+        format.html { redirect_to root_path, notice: "#{@newsletter.name} has been updated." }
         # format.json { render :show, status: :ok, location: @newsletter }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -44,7 +44,7 @@ class NewslettersController < ApplicationController
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Newsletter was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: "#{@newsletter.name} has been deleted." }
       format.json { head :no_content }
     end
   end

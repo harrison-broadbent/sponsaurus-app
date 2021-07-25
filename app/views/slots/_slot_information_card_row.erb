@@ -30,7 +30,7 @@
     <% end %>
   </td>
   <td class="w-2/5 px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
-    <% if current_user_owns_slot? slot %>
+    <% if current_user_owns_newsletter? slot.newsletter %>
       <% unless slot.expired? %>
         <% if slot.booked? %>
           <%= link_to "Make available", toggle_booking_status_slot_path(slot), method: :patch, data: { confirm: 'Are you sure? This slot will become available.' }, class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-100 focus:ring-green-500" %>
@@ -46,7 +46,7 @@
       <% end %>
     <% end %>
 
-    <% unless current_user_owns_slot? slot %>
+    <% unless current_user_owns_newsletter? slot.newsletter %>
       <% if slot.booked? %>
         <p class="px-4 py-2 inline-flex text-s leading-5 font-semibold rounded-full bg-red-100 text-red-800" >
           This slot has been booked

@@ -1,8 +1,32 @@
 <!-- Render the list of slots, showing only future slots to a viewer. -->
-<%= render 'slot_information_card', slots: @future_slots %>
 
-<% if @past_slots %>
-  <hr>
-  <%= render 'slot_information_card', slots: @past_slots %>
+<% if @slots.empty? %>
+  <% if current_user_owns_newsletter? @newsletter %>
+    <%= link_to new_newsletter_slot_path(@newsletter, @slot), class: "my-4 relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+      </svg>
+      <span class="mt-2 block text-sm font-medium text-gray-900">
+          Start by adding an advertising slot.
+        </span>
+    <% end %>
+  <% else %>
+    <div class="my-4 relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+      </svg>
+      <span class="mt-2 block text-sm font-medium text-gray-900">
+          No slots to show.
+        </span>
+    </div>
+  <% end %>
+<% else %>
+  <%= render 'slot_information_card', slots: @future_slots %>
+
+  <% unless @past_slots.empty? %>
+    <hr>
+    <%= render 'slot_information_card', slots: @past_slots %>
+  <% end %>
 <% end %>
+
 

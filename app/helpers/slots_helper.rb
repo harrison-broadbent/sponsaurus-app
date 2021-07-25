@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module SlotsHelper
-  def current_user_owns_slot?(slot)
-    user_signed_in? and slot.newsletter.user.eql?(current_user)
-  end
+  # def current_user_owns_slot?(slot)
+  #   user_signed_in? and slot.newsletter.user.eql?(current_user)
+  # end
 
   def generate_mailto_string(newsletter, slot)
     user_email = newsletter.user.email
