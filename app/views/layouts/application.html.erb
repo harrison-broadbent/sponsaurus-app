@@ -19,7 +19,8 @@
       <main>
         <div class="max-w-3xl mx-auto py-8">
 
-          <p id="notice" class="text-green-500"><%= notice %></p>
+<!--          <p id="notice" class="text-green-500"><%#= notice %></p>-->
+          <%= render 'layouts/notice', id: "notice", flash: flash %>
           <p id="alert" class="text-red-500"><%= alert %></p>
           <%= yield %>
 
