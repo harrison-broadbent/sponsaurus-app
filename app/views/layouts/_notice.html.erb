@@ -1,5 +1,5 @@
-<% unless flash.empty? %>
-  <div class="rounded-md bg-green-50 p-4">
+<% unless notice.nil? %>
+  <div class="rounded-md bg-green-50 p-4 my-4">
     <div class="flex">
       <div class="flex-shrink-0">
         <!-- Heroicon name: solid/check-circle -->
@@ -8,16 +8,11 @@
         </svg>
       </div>
       <div class="ml-3">
-        <% flash.each do |type, msg| %>
+        <% Array(notice).each do |msg| %>
           <h3 class="text-sm font-medium text-green-800">
             <%= msg %>
           </h3>
         <% end %>
-  <!--      <div class="mt-2 text-sm text-green-700">-->
-  <!--        <p>-->
-  <!--          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.-->
-  <!--        </p>-->
-  <!--      </div>-->
       </div>
     </div>
   </div>

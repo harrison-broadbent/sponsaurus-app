@@ -17,8 +17,8 @@ class SlotsController < ApplicationController
   # Owner can see all their slots, viewers can only see slots in the future
   def index
     @slots = @newsletter.slots
-    @future_slots = @newsletter.slots.reject(&:expired?)
-    @past_slots = (@newsletter.slots.select(&:expired?) if helpers.current_user_owns_slot? @slots.first)
+    @future_slots = @newsletter.slots.reject(&:expired?).reverse
+    @past_slots = (@newsletter.slots.select(&:expired?).reverse if helpers.current_user_owns_slot? @slots.first)
   end
 
   # GET /slots/1 or /slots/1.json

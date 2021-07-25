@@ -1,7 +1,7 @@
 
 
 <% if user_signed_in? %>
-  <%= render 'users/user_details' %>
+  <%= render 'users/user_profile_card' %>
   <% current_user.newsletters.each do |newsletter| %>
     <%= render 'newsletters/newsletter_information', newsletter: newsletter %>
   <% end %>
