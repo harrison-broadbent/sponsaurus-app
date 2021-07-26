@@ -1,0 +1,61 @@
+<tr>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="ml-4">
+        <div class="text-sm font-medium text-gray-900">
+          <%= slot.formatted_publish_date %>
+        </div>
+        <div class="text-sm text-gray-500">
+          <%= days_until_or_after_published_string(slot) %>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="text-sm text-gray-900"><%= slot.price.format %></div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <% if slot.expired? %>
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+        Expired
+      </span>
+    <% elsif slot.booked %>
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+        Booked
+      </span>
+    <% else %>
+      <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+        Available
+      </span>
+    <% end %>
+  </td>
+  <td class="w-2/5 px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
+    <% if current_user_owns_newsletter? slot.newsletter %>
+      <% unless slot.expired? %>
+        <% if slot.booked? %>
+          <%= link_to "Make available", toggle_booking_status_slot_path(slot), method: :patch, data: { confirm: 'Are you sure? This slot will become available.' }, class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-100 focus:ring-green-500" %>
+        <% else %>
+          <%= link_to "Mark as booked", toggle_booking_status_slot_path(slot), method: :patch, data: { confirm: 'Are you sure? This slot will become unavailable' }, class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-100 focus:ring-red-500" %>
+        <% end %>
+      <% end %>
+      <%= link_to [@newsletter, slot], method: :delete, data: { confirm: 'Are you sure you want to delete this slot?' }, class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500" do %>
+        Delete
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+        </svg>
+      <% end %>
+    <% end %>
+
+    <% unless current_user_owns_newsletter? slot.newsletter %>
+      <% if slot.booked? %>
+        <p class="px-4 py-2 inline-flex text-s leading-5 font-semibold rounded-full bg-red-100 text-red-800" >
+          This slot has been booked
+        </p>
+      <% else %>
+        <%= link_to "Slot Available. Book Now →", generate_mailto_string(@newsletter, slot), class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-100 focus:ring-green-500" %>
+      <% end %>
+    <% end %>
+
+
+  </td>
+</tr>

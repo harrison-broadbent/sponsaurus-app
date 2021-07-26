@@ -5,10 +5,6 @@ module SlotsHelper
   #   user_signed_in? and slot.newsletter.user.eql?(current_user)
   # end
 
-  def current_user_owns_newsletter?(newsletter)
-    user_signed_in? and current_user.newsletters.include? newsletter
-  end
-
   def generate_mailto_string(newsletter, slot)
     user_email = newsletter.user.email
     slot_date_formatted = slot.publish_date.strftime('%d %B, %Y')
@@ -23,6 +19,16 @@ module SlotsHelper
       'Yes'
     else
       'No'
+    end
+  end
+
+  def days_until_or_after_published_string(slot)
+    if slot.days_until_published.positive?
+      "In #{pluralize(slot.days_until_published, 'day')}"
+    elsif slot.days_until_published.negative?
+      "#{pluralize(-slot.days_until_published, 'day')} ago"
+    else
+      'Today!'
     end
   end
 end

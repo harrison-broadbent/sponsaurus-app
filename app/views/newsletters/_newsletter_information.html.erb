@@ -1,16 +1,28 @@
-<div class="display-card">
-  <div class="display-card__data">
-    <h2 class="-heading-text"><%= newsletter.name %></h2>
-    <p>Statistics: <%= newsletter.statistics %></p>
-    <p>Description: <%= newsletter.information %></p>
-  </div>
-
-  <div class="display-card__links">
+<div class="bg-white px-4 py-5 border-b shadow border-gray-200 sm:px-6 rounded-lg">
+  <div class="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
+    <div class="ml-4 mt-4">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        <%= newsletter.name %>
+      </h3>
+      <p class="mt-1 text-sm text-gray-500">
+        <%= newsletter.statistics %>
+      </p>
+      <p class="mt-1 text-sm text-gray-500">
+        <%= newsletter.information %>
+      </p>
+    </div>
+    
     <% if current_user_owns_newsletter?(newsletter) %>
-      <%= link_to 'Edit', edit_newsletter_path(newsletter) %>
-      <%= link_to "View slots for #{newsletter.name}", pretty_newsletter_slots_path(newsletter) %>
+      <div class="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
+        <%= link_to edit_newsletter_path(newsletter), class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500" do %>
+          Edit information
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+        <% end %>
+        <%= link_to "View Slots →", pretty_newsletter_slots_path(newsletter), class: "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-100 focus:ring-green-500" %>
+      </div>
     <% end %>
-  </div>
 
-</div>
+  </div>
 </div>

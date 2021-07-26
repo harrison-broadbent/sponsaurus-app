@@ -2,7 +2,7 @@
 
 class NewslettersController < ApplicationController
   before_action :set_newsletter, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[index edit update destroy]
+  before_action :authenticate_user!, only: %i[index edit update destroy new create]
 
   # GET /newsletters/new
   def new

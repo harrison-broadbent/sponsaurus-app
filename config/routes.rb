@@ -1,9 +1,10 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   resources :newsletters, path: '/', only: %i[edit new update create destroy] do
     resources :slots
   end
+  # Custom / Non-standard routes
+  get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
+
   # Custom / Non-standard routes
   get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
 

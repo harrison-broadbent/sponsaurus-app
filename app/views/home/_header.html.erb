@@ -1,14 +1,42 @@
-<div class="header">
-  <div class="header__left-align">
-    <p class="-bold-text">Sponsaurus</p>
-    <%= link_to 'Home', root_path, class: 'nav-item' %>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<nav class="bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex">
+        <div class="flex-shrink-0 flex items-center">
+<!--          <img class="block lg:hidden h-8 w-auto" src="./app/assets/images/" alt="Workflow">-->
+          <%= image_tag("logos/stegosaur_minimal_trimmed_yellow_no_bg.png", class: "block h-8 w-auto") %>
+          <p class="px-2 font-bold text-xl">Sponsaurus</p>
+        </div>
+        <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+          <!-- Current: "border-yellow-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+          <%= link_to "Home", root_path, class: "border-yellow-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" %>
+
+          <% if user_signed_in? %>
+            <%= link_to "Slots", current_user_slots_path, class: "border-yellow-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="hidden sm:ml-6 sm:flex sm:items-center">
+        <!-- Profile image and link -->
+        <div class="ml-3 relative">
+          <div>
+            <button type="button" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+
+              <% if user_signed_in? %>
+                <% if current_user.image.nil? %>
+                  <%= link_to "Profile", user_path(current_user), class: "text-grey-800 font-semibold" %>
+                <% else %>
+                  <%= link_to image_tag(current_user.image, class: "h-8 w-8 rounded-full"), user_path(current_user) %>
+                <% end %>
+              <% else %>
+                <%= link_to "Sign in with Google.", omniauth_authorize_path(:user, :google_oauth2), method: :post, class: "text-grey-800 font-semibold" %>
+            <% end %>
+
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="header__right-align">
-    <% if user_signed_in? %>
-      <%= link_to current_user.name, user_path(current_user), class: 'nav-item'  %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-item' %>
-    <% else %>
-      <%= link_to "Sign in with Google.", omniauth_authorize_path(:user, :google_oauth2), method: :post %><br />
-  <% end %>
-  </div>
-</div>
+</nav>

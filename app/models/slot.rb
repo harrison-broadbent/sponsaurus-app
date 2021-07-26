@@ -9,7 +9,6 @@
 #       t.datetime :publish_date
 #       t.references :newsletter
 class Slot < ApplicationRecord
-
   monetize :price_cents
 
   # Associations
@@ -20,16 +19,24 @@ class Slot < ApplicationRecord
   validates :publish_date, presence: true
   validates :price_cents, presence: true, numericality: true
 
-  validate :publish_date_in_the_future
+  validate :validate_publish_date_in_future
 
   # Methods
-  def publish_date_in_the_future
-    unless publish_date.nil?
-      errors.add(:publish_date, 'The publish date must be in the future.') if publish_date < Time.now
+  def validate_publish_date_in_future
+    if !publish_date.nil? && (publish_date < Time.now)
+      errors.add(:publish_date, 'The publish date must be in the future.')
     end
   end
 
-  def formatted_date
+  def formatted_publish_date
     publish_date.strftime('%B %e, %Y')
+  end
+
+  def days_until_published
+    (publish_date.to_date - Date.today).to_i
+  end
+
+  def expired?
+    (publish_date.to_date - Date.today).to_i <= 0
   end
 end

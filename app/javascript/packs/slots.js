@@ -18,7 +18,7 @@ function copyShareURL() {
     console.log("copied link!")
 
     let btn = document.getElementById("button__share-link")
-    btn.className += " -bg-color-light-green"
+    btn.className += "bg-green-300"
     btn.innerText = "Link copied to clipboard!"
 }
 

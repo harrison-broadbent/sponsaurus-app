@@ -2,7 +2,7 @@
 
 class SlotsController < ApplicationController
   before_action :set_slot, only: %i[show edit update destroy toggle_booking_status]
-  before_action :authenticate_user!, only: %i[show update edit destroy create]
+  before_action :authenticate_user!, only: %i[show update edit destroy create new]
   before_action :set_associated_newsletter
 
   # Lets the slot owner toggle a slot between booked and open.
@@ -17,11 +17,8 @@ class SlotsController < ApplicationController
   # Owner can see all their slots, viewers can only see slots in the future
   def index
     @slots = @newsletter.slots
-    @future_slots = @newsletter.slots.where('publish_date > ?', DateTime.current.end_of_day)
-
-    @past_slots = if helpers.current_user_owns_newsletter? @newsletter
-                    @newsletter.slots.where('publish_date <= ?', DateTime.current.end_of_day)
-                  end
+    @future_slots = Array(@newsletter.slots.reject(&:expired?).reverse)
+    @past_slots = Array((@newsletter.slots.select(&:expired?) if helpers.current_user_owns_newsletter? @newsletter))
   end
 
   # GET /slots/1 or /slots/1.json
@@ -48,7 +45,7 @@ class SlotsController < ApplicationController
 
     respond_to do |format|
       if @slot.save
-        format.html { redirect_to @newsletter, notice: 'Slot was successfully created.' }
+        format.html { redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was successfully created.' }
         format.json { render :show, status: :created, location: @slot }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -74,7 +71,7 @@ class SlotsController < ApplicationController
   def destroy
     @slot.destroy
     respond_to do |format|
-      format.html { redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was successfully destroyed.' }
+      format.html { redirect_to pretty_newsletter_slots_path(@newsletter), notice: 'Slot was deleted.' }
       format.json { head :no_content }
     end
   end

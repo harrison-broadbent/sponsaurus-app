@@ -13,18 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-/*
-    Uses the BEM method to name css -
-    blockName__elementName -modifierName
-*/
-
-html {
-    font-family: "Inter", sans-serif;
-    color: #22292f;
-}
-
-body {
-    width: 70%;
-    margin: 0 auto;
-}
