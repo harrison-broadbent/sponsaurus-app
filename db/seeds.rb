@@ -19,38 +19,24 @@ u = User.create! name: 'Harrison Broadbent',
 
 newsletter = u.newsletters.build name: 'SparseObfuscation',
                                  information: 'Brain cells lost, every Wednesday.',
-                                 statistics: '3% death rate. 55% grey matter loss. 100% bad.',
-                                 email_template_subject: 'SparseObfuscation Sponsorship Enquiry',
-                                 email_template_body:
-                                   "Hey, I'm getting in touch to book a sponsorship slot in your newsletter.
+                                 statistics: '3% death rate. 55% grey matter loss. 100% bad.'
 
-Here are the relevant details:
-
-Ad Details -
-Name: [Insert Product Name]
-Tagline: [Insert Product Tagline]
-Body: [Insert Body Text]
-Link: [Insert link to Product]
-Image: [Add an image (optional)]
-
-My Details -
-Name: [Name of contact reference]
-Email: [Email of contact reference]
-Role: [Your role and relationship to the product]
-
-[NOTE TO SENDER: Please fill in ALL the following to ensure your inquiry is taken seriously.]
-[Feel free to delete the text in [brackets] before sending]
-"
 newsletter.save
+
+slot_type_classified = newsletter.slot_types.build name: 'Classified',
+                                                   description: 'Short text ads. 160 characters or less.'
 
 slot1 = newsletter.slots.build price_cents: 4900,
                                publish_date: Time.now - 2.days,
+                               slot_type: slot_type_classified,
                                booked: true
 
 slot2 = newsletter.slots.build price_cents: 4900,
+                               slot_type: slot_type_classified,
                                publish_date: Time.now + 2.days
 
 slot3 = newsletter.slots.build price_cents: 4900,
+                               slot_type: slot_type_classified,
                                publish_date: Time.now + 9.days
 
 # dont run the validations, so that publish_date can be in the past

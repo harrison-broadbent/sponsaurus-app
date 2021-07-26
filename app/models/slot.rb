@@ -13,12 +13,12 @@ class Slot < ApplicationRecord
 
   # Associations
   belongs_to :newsletter
+  belongs_to :slot_type
   default_scope -> { order(publish_date: :desc) }
 
   # Validations
   validates :publish_date, presence: true
   validates :price_cents, presence: true, numericality: true
-
   validate :validate_publish_date_in_future
 
   # Methods

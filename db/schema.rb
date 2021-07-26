@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_101626) do
+ActiveRecord::Schema.define(version: 2021_07_26_110928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2021_07_19_101626) do
     t.index ["user_id"], name: "index_newsletters_on_user_id"
   end
 
+  create_table "slot_types", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "email_template_subject"
+    t.text "email_template_body"
+    t.bigint "newsletter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["newsletter_id"], name: "index_slot_types_on_newsletter_id"
+  end
+
   create_table "slots", force: :cascade do |t|
     t.integer "price_cents"
     t.boolean "booked", default: false
@@ -47,7 +58,9 @@ ActiveRecord::Schema.define(version: 2021_07_19_101626) do
     t.bigint "newsletter_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "slot_type_id", null: false
     t.index ["newsletter_id"], name: "index_slots_on_newsletter_id"
+    t.index ["slot_type_id"], name: "index_slots_on_slot_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,4 +79,6 @@ ActiveRecord::Schema.define(version: 2021_07_19_101626) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "slot_types", "newsletters"
+  add_foreign_key "slots", "slot_types"
 end
