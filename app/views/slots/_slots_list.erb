@@ -1,6 +1,6 @@
 <!-- Render the list of slots, showing only future slots to a viewer. -->
 
-<% if @slots.empty? %>
+<% if @future_slots.empty? %>
   <% if current_user_owns_newsletter? @newsletter %>
     <%= link_to new_newsletter_slot_path(@newsletter, @slot), class: "my-4 relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" do %>
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,11 +22,11 @@
   <% end %>
 <% else %>
   <%= render 'slot_information_card', slots: @future_slots %>
+<% end %>
 
-  <% unless @past_slots.empty? %>
-    <hr>
-    <%= render 'slot_information_card', slots: @past_slots %>
-  <% end %>
+<% unless @past_slots.empty? %>
+  <hr>
+  <%= render 'slot_information_card', slots: @past_slots %>
 <% end %>
 
 

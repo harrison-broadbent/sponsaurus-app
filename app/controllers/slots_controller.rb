@@ -18,8 +18,7 @@ class SlotsController < ApplicationController
   def index
     @slots = @newsletter.slots
     @future_slots = Array(@newsletter.slots.reject(&:expired?).reverse)
-    @past_slots = Array((@newsletter.slots.select(&:expired?).reverse if helpers.current_user_owns_newsletter? @newsletter))
-
+    @past_slots = Array((@newsletter.slots.select(&:expired?) if helpers.current_user_owns_newsletter? @newsletter))
   end
 
   # GET /slots/1 or /slots/1.json
