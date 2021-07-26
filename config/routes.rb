@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   # Custom / Non-standard routes
   get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
 
-  # Custom / Non-standard routes
-  get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
-
   # Route to toggle slot booked status
   resources :slots do
     patch :toggle_booking_status, on: :member
