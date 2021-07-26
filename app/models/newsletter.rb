@@ -1,11 +1,23 @@
 # frozen_string_literal: true
 
-# Newsletter model to represent a users newsletter.
-# Has the following fields -
-#       t.string :name      -> The name of the newsletter.
-#       t.text :information -> General information provided by the user.
-#       t.text :statistics  -> Statistics such as open rate.
-#       t.integer :user_id  -> User ID for the belongs_to relationship.
+# == Schema Information
+#
+# Table name: newsletters
+#
+#  id          :bigint           not null, primary key
+#  information :text
+#  name        :string
+#  slug        :string
+#  statistics  :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :bigint
+#
+# Indexes
+#
+#  index_newsletters_on_slug     (slug) UNIQUE
+#  index_newsletters_on_user_id  (user_id)
+
 class Newsletter < ApplicationRecord
   # before_create :set_default_email_content
 

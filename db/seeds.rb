@@ -1,11 +1,6 @@
 # frozen_string_literal: true
 
-# Seed Sponsaurus with the following data -
-#
-# 1 User,
-# 1 Newsletter for the user,
-# 2 Slots for the newsletter,
-# 1 Booking for the first slot.
+# Seed db with 1 user and relevent info, slots, type etc.
 
 puts 'seeding database ...'
 

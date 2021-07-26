@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 2021_07_26_110928) do
     t.string "name"
     t.text "information"
     t.text "statistics"
-    t.string "email_template_subject"
-    t.text "email_template_body"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
