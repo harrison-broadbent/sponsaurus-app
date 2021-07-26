@@ -34,6 +34,7 @@ Tagline: [Insert Product Tagline]
 Body: [Insert Body Text]
 Link: [Insert link to Product]
 Image: [Add an image (optional)]
+
 My Details -
 Name: [Name of contact reference]
 Email: [Email of contact reference]
