@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 class SlotTypesController < ApplicationController
-  before_action :set_slot_type, only: %i[ show edit update destroy ]
+  before_action :set_slot_type, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[show update edit destroy create new]
+  before_action :set_associated_newsletter
 
   # GET /slot_types or /slot_types.json
   def index
@@ -7,8 +11,7 @@ class SlotTypesController < ApplicationController
   end
 
   # GET /slot_types/1 or /slot_types/1.json
-  def show
-  end
+  def show; end
 
   # GET /slot_types/new
   def new
@@ -16,20 +19,17 @@ class SlotTypesController < ApplicationController
   end
 
   # GET /slot_types/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /slot_types or /slot_types.json
   def create
-    @slot_type = SlotType.new(slot_type_params)
+    @slot_type = @newsletter.slot_types.build(slot_type_params)
 
     respond_to do |format|
       if @slot_type.save
-        format.html { redirect_to @slot_type, notice: "Slot type was successfully created." }
-        format.json { render :show, status: :created, location: @slot_type }
+        format.html { redirect_to :back, notice: "#{@slot_type.name} has been created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @slot_type.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -38,7 +38,7 @@ class SlotTypesController < ApplicationController
   def update
     respond_to do |format|
       if @slot_type.update(slot_type_params)
-        format.html { redirect_to @slot_type, notice: "Slot type was successfully updated." }
+        format.html { redirect_to @slot_type, notice: 'Slot type was successfully updated.' }
         format.json { render :show, status: :ok, location: @slot_type }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +51,24 @@ class SlotTypesController < ApplicationController
   def destroy
     @slot_type.destroy
     respond_to do |format|
-      format.html { redirect_to slot_types_url, notice: "Slot type was successfully destroyed." }
+      format.html { redirect_to slot_types_url, notice: 'Slot type was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_slot_type
-      @slot_type = SlotType.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def slot_type_params
-      params.fetch(:slot_type, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_slot_type
+    @slot_type = SlotType.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def slot_type_params
+    params.require(:slot_type).permit(:name, :description)
+  end
+
+  def set_associated_newsletter
+    @newsletter = current_user.newsletters.first
+  end
 end
