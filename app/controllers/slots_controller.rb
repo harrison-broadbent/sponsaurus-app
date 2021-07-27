@@ -30,6 +30,7 @@ class SlotsController < ApplicationController
   # GET /slots/new
   def new
     @slot = Slot.new
+    @slot_type_options = @newsletter.slot_types.map { |type| [type.name, type.id] }
   end
 
   # GET /slots/1/edit
@@ -93,6 +94,6 @@ class SlotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def slot_params
-    params.require(:slot).permit(:price, :publish_date)
+    params.require(:slot).permit(:price, :publish_date, :slot_type_id)
   end
 end
