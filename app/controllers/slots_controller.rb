@@ -30,7 +30,9 @@ class SlotsController < ApplicationController
   # GET /slots/new
   def new
     @slot = Slot.new
-    @slot_type_options = @newsletter.slot_types.map { |type| [type.name, type.id] }
+    @slot_type_options =
+      @newsletter.slot_types.map { |type| [type.name, type.id] }
+                 .append(['+ Add another type', 'new'])
   end
 
   # GET /slots/1/edit

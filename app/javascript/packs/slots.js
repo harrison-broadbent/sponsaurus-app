@@ -1,4 +1,5 @@
 // Javascript file for the Slots views.
+console.log('loaded slots js')
 
 // Copies the current url to the users clipboard,
 // so that they can share their slots pages easily.
@@ -22,5 +23,16 @@ function copyShareURL() {
     btn.innerText = "Link copied to clipboard!"
 }
 
-document.getElementById("button__share-link").addEventListener('click', copyShareURL)
-console.log("loaded slots.js")
+if (document.getElementById("button__share-link")) {
+    document.getElementById("button__share-link").addEventListener('click', copyShareURL)
+    console.log("loaded slots.js")
+}
+
+if (document.getElementById("slot_slot_type_id")) {
+    document.getElementById("slot_slot_type_id").onchange = function() {
+        if (this.value === "new") {
+            window.location.href = Rails.application.routes.url_helpers.new_slot_type_path
+        }
+
+    }
+}
