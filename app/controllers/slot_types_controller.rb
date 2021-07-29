@@ -27,7 +27,8 @@ class SlotTypesController < ApplicationController
 
     respond_to do |format|
       if @slot_type.save
-        format.html { redirect_to :back, notice: "#{@slot_type.name} has been created." }
+        flash[:notice] = "#{@slot_type.name} has been created."
+        format.html { redirect_to new_newsletter_slot_path(@newsletter) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
