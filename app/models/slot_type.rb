@@ -20,7 +20,7 @@
 #  fk_rails_...  (newsletter_id => newsletters.id)
 #
 class SlotType < ApplicationRecord
-  before_create :set_default_email_content
+  before_validation :set_default_email_content, on: :create
 
   # associations
   belongs_to :newsletter
@@ -49,6 +49,7 @@ My Details -
 Name: [Name of contact reference]
 Email: [Email of contact reference]
 Role: [Your role and relationship to the product]
+
 [NOTE TO SENDER: Please fill in ALL the following to ensure your inquiry is taken seriously.]
 [Feel free to delete the text in [brackets] before sending]
 "

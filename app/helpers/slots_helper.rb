@@ -12,10 +12,12 @@ module SlotsHelper
 
     subject_line = ERB::Util.url_encode(slot.slot_type.email_template_subject.to_s)
     body_text = ERB::Util.url_encode(
+      "--- \n" +
       "Slot Date: #{slot_date_formatted} \n" +
       "Slot Type: #{slot_type} \n" +
-        "\n" +
-        slot.slot_type.email_template_body
+      "---" +
+      "\n" +
+      slot.slot_type.email_template_body
     )
 
     # subject_line = "Sponsorship Enquiry"
