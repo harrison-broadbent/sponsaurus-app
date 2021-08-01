@@ -16,6 +16,8 @@ class SlotTypesController < ApplicationController
   # GET /slot_types/new
   def new
     @slot_type = SlotType.new
+    @slot_type.newsletter_id = @newsletter.id
+    @slot_type.set_default_email_content
   end
 
   # GET /slot_types/1/edit
@@ -66,7 +68,7 @@ class SlotTypesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def slot_type_params
-    params.require(:slot_type).permit(:name, :description)
+    params.require(:slot_type).permit(:name, :description, :email_template_subject, :email_template_body)
   end
 
   def set_associated_newsletter

@@ -7,6 +7,10 @@
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/slot_types_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slot_types_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/slots_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/slots_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/slot_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/slot_type.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slot_types/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slot_types/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_form.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +174,9 @@
       <workItem from="1627175177513" duration="13895000" />
       <workItem from="1627293237636" duration="328000" />
       <workItem from="1627350525259" duration="11758000" />
-      <workItem from="1627538066055" duration="1006000" />
+      <workItem from="1627538066055" duration="2455000" />
+      <workItem from="1627634798500" duration="638000" />
+      <workItem from="1627726132303" duration="4461000" />
     </task>
     <servers />
   </component>

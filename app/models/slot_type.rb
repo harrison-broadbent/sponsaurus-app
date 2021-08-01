@@ -26,10 +26,17 @@ class SlotType < ApplicationRecord
   belongs_to :newsletter
   has_many :slots
 
+  # validation
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :email_template_body, presence: true
+  validates :email_template_subject, presence: true
+
   # methods
   def set_default_email_content
-    self.email_template_subject = "#{self.name} sponsorship enquiry"
-    self.email_template_body = "Hey, I'm getting in touch to book a sponsorship slot in your newsletter.
+    self.email_template_subject ||= "#{self.newsletter.name} Sponsorship Enquiry"
+    self.email_template_body ||= "Hey, I'm getting in touch to book a sponsorship slot in your newsletter.
 Here are the relevant details:
 Ad Details -
 Name: [Insert Product Name]
