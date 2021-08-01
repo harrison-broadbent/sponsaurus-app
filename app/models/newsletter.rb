@@ -1,13 +1,25 @@
 # frozen_string_literal: true
 
-# Newsletter model to represent a users newsletter.
-# Has the following fields -
-#       t.string :name      -> The name of the newsletter.
-#       t.text :information -> General information provided by the user.
-#       t.text :statistics  -> Statistics such as open rate.
-#       t.integer :user_id  -> User ID for the belongs_to relationship.
+# == Schema Information
+#
+# Table name: newsletters
+#
+#  id          :bigint           not null, primary key
+#  information :text
+#  name        :string
+#  slug        :string
+#  statistics  :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :bigint
+#
+# Indexes
+#
+#  index_newsletters_on_slug     (slug) UNIQUE
+#  index_newsletters_on_user_id  (user_id)
+
 class Newsletter < ApplicationRecord
-  before_create :set_default_email_content
+  # before_create :set_default_email_content
 
   # Pretty URL Slugs
   extend FriendlyId
@@ -16,6 +28,7 @@ class Newsletter < ApplicationRecord
   # Associations
   belongs_to :user
   has_many :slots, dependent: :destroy
+  has_many :slot_types, dependent: :destroy
 
   # Validations
 
@@ -24,23 +37,23 @@ class Newsletter < ApplicationRecord
   validates :statistics, presence: true
 
   # Methods
-  def set_default_email_content
-    self.email_template_subject = "#{self.name} sponsorship enquiry"
-    self.email_template_body = "Hey, I'm getting in touch to book a sponsorship slot in your newsletter.
-Here are the relevant details:
-Ad Details -
-Name: [Insert Product Name]
-Tagline: [Insert Product Tagline]
-Body: [Insert Body Text]
-Link: [Insert link to Product]
-Image: [Add an image (optional)]
-
-My Details -
-Name: [Name of contact reference]
-Email: [Email of contact reference]
-Role: [Your role and relationship to the product]
-[NOTE TO SENDER: Please fill in ALL the following to ensure your inquiry is taken seriously.]
-[Feel free to delete the text in [brackets] before sending]
-"
-  end
+  #   def set_default_email_content
+  #     self.email_template_subject = "#{self.name} sponsorship enquiry"
+  #     self.email_template_body = "Hey, I'm getting in touch to book a sponsorship slot in your newsletter.
+  # Here are the relevant details:
+  # Ad Details -
+  # Name: [Insert Product Name]
+  # Tagline: [Insert Product Tagline]
+  # Body: [Insert Body Text]
+  # Link: [Insert link to Product]
+  # Image: [Add an image (optional)]
+  #
+  # My Details -
+  # Name: [Name of contact reference]
+  # Email: [Email of contact reference]
+  # Role: [Your role and relationship to the product]
+  # [NOTE TO SENDER: Please fill in ALL the following to ensure your inquiry is taken seriously.]
+  # [Feel free to delete the text in [brackets] before sending]
+  # "
+  #   end
 end
