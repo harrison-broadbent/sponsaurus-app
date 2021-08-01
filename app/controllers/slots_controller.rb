@@ -31,7 +31,7 @@ class SlotsController < ApplicationController
   def new
     @slot = Slot.new
     @slot_type_options =
-      @newsletter.slot_types.map { |type| [type.name, type.id] }
+      @newsletter.slot_types.try(:map) { |type| [type.name, type.id] }
                  .append(['+ Add another type', 'new'])
   end
 
@@ -40,9 +40,9 @@ class SlotsController < ApplicationController
 
   # POST /slots or /slots.json
   def create
-    # @slot = @newsletter.slots.build(slot_params.except(:price_cents))
-    # convert from dollars.cents to cents
-    # @slot.price_cents = slot_params.price_cents * 100
+    @slot_type_options =
+      @newsletter.slot_types.try(:map) { |type| [type.name, type.id] }
+        .append(['+ Add another type', 'new'])
 
     @slot = @newsletter.slots.build(slot_params)
 

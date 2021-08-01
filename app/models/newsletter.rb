@@ -28,7 +28,7 @@ class Newsletter < ApplicationRecord
   # Associations
   belongs_to :user
   has_many :slots, dependent: :destroy
-  has_many :slot_types
+  has_many :slot_types, dependent: :destroy
 
   # Validations
 

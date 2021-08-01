@@ -28,11 +28,4 @@ if (document.getElementById("button__share-link")) {
     console.log("loaded slots.js")
 }
 
-if (document.getElementById("slot_slot_type_id")) {
-    document.getElementById("slot_slot_type_id").onchange = function() {
-        if (this.value === "new") {
-            window.location.href = Rails.application.routes.url_helpers.new_slot_type_path
-        }
-
-    }
-}
+let slot_type_select = document.getElementById("slot_slot_type_id")
