@@ -30,6 +30,9 @@ class SlotsController < ApplicationController
   # GET /slots/new
   def new
     @slot = Slot.new
+    @slot_type_options =
+      @newsletter.slot_types.try(:map) { |type| [type.name, type.id] }
+                 .append(['+ Add another type', 'new'])
   end
 
   # GET /slots/1/edit
@@ -37,9 +40,9 @@ class SlotsController < ApplicationController
 
   # POST /slots or /slots.json
   def create
-    # @slot = @newsletter.slots.build(slot_params.except(:price_cents))
-    # convert from dollars.cents to cents
-    # @slot.price_cents = slot_params.price_cents * 100
+    @slot_type_options =
+      @newsletter.slot_types.try(:map) { |type| [type.name, type.id] }
+        .append(['+ Add another type', 'new'])
 
     @slot = @newsletter.slots.build(slot_params)
 
@@ -93,6 +96,6 @@ class SlotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def slot_params
-    params.require(:slot).permit(:price, :publish_date)
+    params.require(:slot).permit(:price, :publish_date, :slot_type_id)
   end
 end

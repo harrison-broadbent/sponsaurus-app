@@ -8,8 +8,18 @@ module SlotsHelper
   def generate_mailto_string(newsletter, slot)
     user_email = newsletter.user.email
     slot_date_formatted = slot.publish_date.strftime('%d %B, %Y')
-    subject_line = ERB::Util.url_encode(newsletter.email_template_subject.to_s)
-    body_text = ERB::Util.url_encode("Slot Date: #{slot_date_formatted} \n\n" + newsletter.email_template_body)
+    slot_type = slot.slot_type.name
+
+    subject_line = ERB::Util.url_encode(slot.slot_type.email_template_subject.to_s)
+    body_text = ERB::Util.url_encode(
+      "Slot Date: #{slot_date_formatted} \n" +
+      "Slot Type: #{slot_type} \n" +
+        "\n" +
+        slot.slot_type.email_template_body
+    )
+
+    # subject_line = "Sponsorship Enquiry"
+    # body_text = "This is a sponsorship enquiry."
 
     "mailto:#{user_email}?subject=#{subject_line}&body=#{body_text}"
   end
