@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/slots_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/slots_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/slots.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/slots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/stylesheets/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/stylesheets/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_powered_by_pill.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_powered_by_pill.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +178,7 @@
       <workItem from="1627726132303" duration="4461000" />
       <workItem from="1627784307285" duration="3560000" />
       <workItem from="1627989328719" duration="2705000" />
-      <workItem from="1628135557193" duration="5835000" />
+      <workItem from="1628135557193" duration="12949000" />
     </task>
     <servers />
   </component>
