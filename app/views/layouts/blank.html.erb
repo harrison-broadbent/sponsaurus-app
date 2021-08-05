@@ -1,0 +1,32 @@
+<!--Layout for embedded sponsaurus pages-->
+<!--Does not render header-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sponsaurus</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main>
+        <div class="max-w-4xl mx-auto py-8">
+          <%= render 'layouts/notice', id: "notice", notice: notice %>
+          <%= render 'layouts/alert', id: "alert", alert: alert %>
+          <p id="alert" class="text-red-500"><%= alert %></p>
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+
+  </body>
+
+</html>
