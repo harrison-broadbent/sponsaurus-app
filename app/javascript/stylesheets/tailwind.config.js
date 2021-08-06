@@ -20,6 +20,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        "sponsaurus-yellow": "#f9d500"
+      },
       fontFamily: {
         sans: ['Inter var'],
       },
