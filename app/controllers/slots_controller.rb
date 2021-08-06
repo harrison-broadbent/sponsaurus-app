@@ -5,6 +5,8 @@ class SlotsController < ApplicationController
   before_action :authenticate_user!, only: %i[show update edit destroy create new]
   before_action :set_associated_newsletter
 
+  layout 'blank', only: :embed
+
   # Lets the slot owner toggle a slot between booked and open.
   # Reloads the page on each redirect.
   def toggle_booking_status
@@ -16,15 +18,14 @@ class SlotsController < ApplicationController
   # GET /slots or /slots.json
   # Owner can see all their slots, viewers can only see slots in the future
   def index
-    @slots = @newsletter.slots
-    @future_slots = Array(@newsletter.slots.reject(&:expired?).reverse)
-    @past_slots = Array((@newsletter.slots.select(&:expired?) if helpers.current_user_owns_newsletter? @newsletter))
+    collect_slots
   end
 
-  # GET /slots/1 or /slots/1.json
-  def show
-    # @slot set using before_action
-    # @newsletter set using before_action
+  # GET /slots/embed
+  # Route for embeddable widget
+  def embed
+    response.headers.delete 'X-Frame-Options'
+    collect_slots
   end
 
   # GET /slots/new
@@ -35,14 +36,12 @@ class SlotsController < ApplicationController
                  .append(['+ Add another type', 'new'])
   end
 
-  # GET /slots/1/edit
-  def edit; end
 
   # POST /slots or /slots.json
   def create
     @slot_type_options =
       @newsletter.slot_types.try(:map) { |type| [type.name, type.id] }
-        .append(['+ Add another type', 'new'])
+                 .append(['+ Add another type', 'new'])
 
     @slot = @newsletter.slots.build(slot_params)
 
@@ -52,19 +51,6 @@ class SlotsController < ApplicationController
         format.json { render :show, status: :created, location: @slot }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @slot.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /slots/1 or /slots/1.json
-  def update
-    respond_to do |format|
-      if @slot.update(slot_params)
-        format.html { redirect_to [@newsletter, @slot], notice: 'Slot was successfully updated.' }
-        format.json { render :show, status: :ok, location: @slot }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @slot.errors, status: :unprocessable_entity }
       end
     end
@@ -81,17 +67,24 @@ class SlotsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  # sets the active slot
   def set_slot
     @slot = Slot.find(params[:id])
   end
 
+  # sets the newsletter associated with the slot
   def set_associated_newsletter
     @newsletter = if params[:newsletter_id]
                     Newsletter.friendly.find(params[:newsletter_id])
                   else
                     @slot.newsletter
                   end
+  end
+
+  def collect_slots
+    @slots = @newsletter.slots
+    @future_slots = Array(@newsletter.slots.reject(&:expired?).reverse)
+    @past_slots = Array((@newsletter.slots.select(&:expired?) if helpers.current_user_owns_newsletter? @newsletter))
   end
 
   # Only allow a list of trusted parameters through.
