@@ -17,7 +17,6 @@
 
 module.exports = {
   purge: {
-    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: process.env.NODE_ENV === 'production',
     content: [
       './app/**/*.html.erb',
@@ -25,13 +24,14 @@ module.exports = {
       './app/javascript/**/*.js',
       './app/javascript/**/*.vue',
       './app/javascript/**/*.jsx',
+      './public/*.html',
     ]
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
-        "sponsaurus-yellow": "#f9d500"
+        "app-yellow": "#f9d500"
       },
       fontFamily: {
         sans: ['Inter var'],
