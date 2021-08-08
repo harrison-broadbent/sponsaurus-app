@@ -1,19 +1,20 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<nav class="bg-white border-b-4 border-app-yellow">
+<nav class="bg-app-yellow border-b-4 border-app-yellow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex">
         <div class="flex-shrink-0 flex items-center">
 <!--          <img class="block lg:hidden h-8 w-auto" src="./app/assets/images/" alt="Workflow">-->
           <%= image_tag("logos/stegosaur_minimal_trimmed_yellow_no_bg.png", class: "block h-8 w-auto") %>
-          <p class="px-2 font-bold text-xl">Sponsaurus</p>
+          <p class="px-2 font-bold text-xl text-gray-900">Sponsaurus</p>
         </div>
+        <div class="hidden sm:block border-r-2 opacity-10 border-gray-600 h-1/2 pl-2 my-auto"></div>
         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
           <!-- Current: "border-yellow-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-          <%= link_to "Home", root_path, class: "transform transition duration-150 ease-in-out text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:scale-105 hover:text-gray-700" %>
+          <%= link_to "Home", root_path, class: "transform transition duration-150 ease-in-out text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-bold hover:scale-105 hover:text-gray-700" %>
 
           <% if user_signed_in? %>
-            <%= link_to "Slots", current_user_slots_path, class: "transform transition duration-150 ease-in-out text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:scale-105 hover:text-gray-700" %>
+            <%= link_to "Slots", current_user_slots_path, class: "transform transition duration-150 ease-in-out text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-bold hover:scale-105 hover:text-gray-700" %>
           <% end %>
         </div>
       </div>
@@ -22,7 +23,7 @@
         <div class="ml-3 relative">
           <div>
             <button type="button" class="
-            transform transition duration-150 ease-in-out max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 hover:scale-105
+            transform transition duration-150 ease-in-out max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 hover:scale-105
             "
             id="user-menu-button"
             aria-expanded="false"
@@ -35,7 +36,7 @@
                   <%= link_to image_tag(current_user.image, class: "h-8 w-8 rounded-full"), user_path(current_user) %>
                 <% end %>
               <% else %>
-                <%= link_to "Sign in with Google.", omniauth_authorize_path(:user, :google_oauth2), method: :post, class: "text-grey-800 font-semibold" %>
+                <%= link_to "Sign in with Google.", omniauth_authorize_path(:user, :google_oauth2), method: :post, class: "text-grey-700 font-semibold" %>
             <% end %>
 
             </button>
