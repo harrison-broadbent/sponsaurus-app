@@ -15,6 +15,7 @@
 //   important: true
 // }
 
+const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
@@ -31,7 +32,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "app-yellow": "#f9d500"
+        "app-yellow": "#f9d500",
+        "blueGray": colors.blueGray,
+        "warmGray": colors.warmGray
       },
       fontFamily: {
         sans: ['Inter var'],

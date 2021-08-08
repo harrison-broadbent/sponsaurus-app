@@ -24,6 +24,7 @@ class SlotsController < ApplicationController
   # GET /slots/embed
   # Route for embeddable widget
   def embed
+    sign_out
     response.headers.delete 'X-Frame-Options'
     collect_slots
   end
