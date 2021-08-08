@@ -1,5 +1,5 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<nav class="bg-white border-b border-gray-200">
+<nav class="bg-white border-b-4 border-app-yellow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex">
@@ -10,18 +10,23 @@
         </div>
         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
           <!-- Current: "border-yellow-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-          <%= link_to "Home", root_path, class: "border-yellow-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" %>
+          <%= link_to "Home", root_path, class: "transform transition duration-150 ease-in-out text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:scale-105 hover:text-gray-700" %>
 
           <% if user_signed_in? %>
-            <%= link_to "Slots", current_user_slots_path, class: "border-yellow-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" %>
+            <%= link_to "Slots", current_user_slots_path, class: "transform transition duration-150 ease-in-out text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:scale-105 hover:text-gray-700" %>
           <% end %>
         </div>
       </div>
-      <div class="hidden sm:ml-6 sm:flex sm:items-center">
+      <div class="ml-6 flex items-center">
         <!-- Profile image and link -->
         <div class="ml-3 relative">
           <div>
-            <button type="button" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button type="button" class="
+            transform transition duration-150 ease-in-out max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 hover:scale-105
+            "
+            id="user-menu-button"
+            aria-expanded="false"
+            aria-haspopup="true">
 
               <% if user_signed_in? %>
                 <% if current_user.image.nil? %>
