@@ -21,7 +21,9 @@ module.exports = {
     enabled: process.env.NODE_ENV === 'production',
     content: [
       './app/**/*.html.erb',
-      './app/**/**/*.html.erb',
+      './app/**/*.html',
+      './**/*.html.erb',
+      './**/*.html',
       './app/helpers/**/*.rb',
       './app/javascript/**/*.js',
       './app/javascript/**/*.vue',
