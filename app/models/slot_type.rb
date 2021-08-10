@@ -28,15 +28,15 @@ class SlotType < ApplicationRecord
 
   # validation
 
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :email_template_body, presence: true
+  validates :name, presence: true, length: { in: 2..30 }
+  validates :description, presence: true, length: { in: 2..300 }
   validates :email_template_subject, presence: true
+  validates :email_template_body, presence: true
 
   # methods
   def set_default_email_content
-    self.email_template_subject ||= "#{self.newsletter.name} Sponsorship Enquiry"
-    self.email_template_body ||= "Hey, I'm getting in touch to book a sponsorship slot in your newsletter.
+    self.email_template_subject ||= "#{self.newsletter.name} Sponsorship"
+    self.email_template_body ||= "Hey, I'd like to book a sponsorship slot in your newsletter.
 Here are the relevant details:
 Ad Details -
 Name: [Insert Product Name]
@@ -51,7 +51,9 @@ Email: [Email of contact reference]
 Role: [Your role and relationship to the product]
 
 [NOTE TO SENDER: Please fill in ALL the following to ensure your inquiry is taken seriously.]
-[Feel free to delete the text in [brackets] before sending]
+[Feel free to delete the remaining text in [brackets] before sending]
+
+Booking via Sponsaurus.
 "
 
   end
