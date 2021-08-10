@@ -21,12 +21,15 @@
           <div class="mt-1 flex rounded-md shadow-sm">
             <%= form.text_field :name, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
           </div>
+          <% unless @newsletter.new_record? %>
+            <p class="mt-2 text-sm text-gray-500"><span class="text-red-500">Warning: </span>Changing the name will also change the page URL. This will break existing links.</p>
+          <% end %>
         </div>
 
         <div class="sm:col-span-6">
           <%= form.label "Information", class: "block text-sm font-medium text-gray-700" %>
           <div class="mt-1">
-            <%= form.text_area :information, class: "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md" %>
+            <%= form.text_area :information, class: "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md" -%>
           </div>
           <p class="mt-2 text-sm text-gray-500">Some general info about your newsletter.</p>
         </div>

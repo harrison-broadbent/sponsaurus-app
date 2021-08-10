@@ -5,6 +5,9 @@
         <h3 class="text-3xl font-bold tracking-tighter leading-6 font-medium text-gray-900 text-center sm:text-left">
           <%= newsletter.name %>
         </h3>
+        <p class="mt-2 text-sm text-gray-500 tracking-tight">
+          <%= newsletter.statistics %>
+        </p>
 <!--        <p class="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.</p>-->
       </div>
 
@@ -26,12 +29,24 @@
   <div class="px-4 pt-2 pb-4 md:flex md:items-center md:justify-between md:space-x-5 bg-gray-50 w-full">
     <div class="flex flex-col items-start">
 
+      <p class="mb-2 -mt-4 px-2 text-gray-700 tracking-tight whitespace-pre-line">
+        <%= newsletter.information %>
+      </p>
+
+<!--      <p class="mt-1 px-2 text-sm text-gray-500 tracking-tight">-->
+        <%#= newsletter.statistics %>
+<!--      </p>-->
+
+    </div>
+  </div>
+</div>
+
 <!--      <span class="inline-flex items-center my-2 p-2 rounded-md text-sm font-medium bg-gray-100 text-gray-800">-->
 <!--        <svg xmlns="http://www.w3.org/2000/svg" class="m-1 text-gray-600 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
 <!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />-->
 <!--        </svg>-->
 <!--        <p class="ml-3 mt-1 text-sm text-gray-500">-->
-          <%#= newsletter.information %>
+<%#= newsletter.information %>
 <!--        </p>-->
 <!--      </span>-->
 
@@ -40,18 +55,6 @@
 <!--          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />-->
 <!--        </svg>-->
 <!--        <p class="ml-3 mt-1 text-sm text-gray-500">-->
-          <%#= newsletter.statistics %>
+<%#= newsletter.statistics %>
 <!--        </p>-->
 <!--      </span>-->
-
-      <p class="mt-2 px-2 text-base text-gray-700 tracking-tight">
-        <%= newsletter.information %>
-      </p>
-
-      <p class="mt-1 px-2 text-sm text-gray-500 tracking-tight">
-        <%= newsletter.statistics %>
-      </p>
-
-    </div>
-  </div>
-</div>
