@@ -22,7 +22,11 @@
             <%= form.text_field :name, class: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
           </div>
           <% unless @newsletter.new_record? %>
-            <p class="mt-2 text-sm text-gray-500"><span class="text-red-500">Warning: </span>Changing the name will also change the page URL. This will break existing links.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              <span class="text-red-500">Warning: </span>
+              Changing the name will also change the page URL. This will break existing links.
+              You will also want to edit your email templates.
+            </p>
           <% end %>
         </div>
 
