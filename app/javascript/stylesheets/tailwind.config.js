@@ -34,7 +34,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "app-yellow": "#f9d500",
+        "app-yellow": colors.yellow["400"],
         // "blueGray": colors.blueGray,
         // "warmGray": colors.warmGray
       },
