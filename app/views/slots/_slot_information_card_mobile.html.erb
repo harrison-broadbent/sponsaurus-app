@@ -1,0 +1,11 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="block sm:hidden bg-white shadow overflow-hidden rounded-md mb-6">
+  <ul role="list" class="divide-y divide-gray-200">
+    <li class="bg-gray-50 px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider">
+      <%= slots == @future_slots ? "Future slots:" : "Past slots:" %>
+    </li>
+    <%  slots.each do |slot| %>
+      <%= render 'slot_information_card_mobile_row', slot: slot %>
+    <% end %>
+  </ul>
+</div>

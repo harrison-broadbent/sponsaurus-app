@@ -35,7 +35,7 @@ module.exports = {
     extend: {
       colors: {
         "app-yellow": colors.yellow["400"],
-        // "blueGray": colors.blueGray,
+        "yellow": colors.yellow,
         // "warmGray": colors.warmGray
       },
       fontFamily: {

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sponsaurus-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sponsaurus-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/logos/stegosaur_minimal_square.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_form.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../schism-demo" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Ruby" />
   </component>
@@ -188,7 +186,10 @@
       <workItem from="1628410059163" duration="6309000" />
       <workItem from="1628503868605" duration="3765000" />
       <workItem from="1628565709967" duration="5046000" />
-      <workItem from="1628769523713" duration="2687000" />
+      <workItem from="1628769523713" duration="4383000" />
+      <workItem from="1629282748262" duration="132000" />
+      <workItem from="1629582732671" duration="10061000" />
+      <workItem from="1629603300026" duration="6562000" />
     </task>
     <servers />
   </component>
