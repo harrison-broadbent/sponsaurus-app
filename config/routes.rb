@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resources :slots
   end
   get '/:newsletter_id', to: 'slots#index', as: 'pretty_newsletter_slots'
-  get '/:newsletter_id/embed', to: 'slots#embed', as: 'pretter_newsletter_slots_embed'
+  get '/:newsletter_id/embed', to: 'slots#embed', as: 'pretty_newsletter_slots_embed'
+  get '/:newsletter_id/embed/:slot_type', to: 'slots#embed'
 
   # Route to toggle slot booked status
   resources :slots, only: %i[new create destroy] do

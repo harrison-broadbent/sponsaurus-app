@@ -18,7 +18,7 @@ class SlotsController < ApplicationController
   # GET /slots or /slots.json
   # Owner can see all their slots, viewers can only see slots in the future
   def index
-    collect_slots
+    collect_all_slots
   end
 
   # GET /slots/embed
@@ -26,7 +26,13 @@ class SlotsController < ApplicationController
   def embed
     sign_out
     response.headers.delete 'X-Frame-Options'
-    collect_slots
+    if params[:slot_type]
+      slot_type = @newsletter.slot_types.find(params[:slot_type])
+      collect_slots_of_type(slot_type)
+      @table_title = slot_type.name
+    else
+      collect_all_slots
+    end
   end
 
   # GET /slots/new
@@ -36,7 +42,6 @@ class SlotsController < ApplicationController
       @newsletter.slot_types.try(:map) { |type| [type.name, type.id] }
                  .append(['+ Add another type', 'new'])
   end
-
 
   # POST /slots or /slots.json
   def create
@@ -82,10 +87,16 @@ class SlotsController < ApplicationController
                   end
   end
 
-  def collect_slots
+  def collect_all_slots
     @slots = @newsletter.slots
     @future_slots = Array(@newsletter.slots.reject(&:expired?).reverse)
     @past_slots = Array((@newsletter.slots.select(&:expired?) if helpers.current_user_owns_newsletter? @newsletter))
+  end
+
+  def collect_slots_of_type(slot_type)
+    slot_type_id = slot_type.id
+    @slots = @newsletter.slots
+    @future_slots = @newsletter.slots.where(slot_type_id: slot_type_id).reject(&:expired?).reverse
   end
 
   # Only allow a list of trusted parameters through.
