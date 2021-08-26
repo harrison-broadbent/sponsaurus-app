@@ -29,12 +29,12 @@
 
 <% else %>
 
-  <%= render 'slot_information_card', slots: @future_slots %>
-  <%= render 'slot_information_card_mobile', slots: @future_slots %>
+  <%= render 'slot_information_card', slots: @future_slots, table_title: @table_title%>
+  <%= render 'slot_information_card_mobile', slots: @future_slots, table_title: @table_title %>
 
 <% end %>
 
-<% unless @past_slots.empty? %>
+<% unless @past_slots.nil? or @past_slots.empty? %>
   <hr class="my-8">
   <%= render 'slot_information_card_mobile', slots: @past_slots %>
   <%= render 'slot_information_card', slots: @past_slots %>
