@@ -74,9 +74,21 @@
         methods: {
             toggleMenuState() {
                 this.menuOpen = !this.menuOpen;
+
+                let btn = document.getElementById("button__embed-link-<%= type %>")
+                let icon = btn.children[0]
+                btn.textContent = this.menuOpen ? "Close" : "Embed"
+                btn.appendChild(icon)
+                console.log(btn.innerText)
             },
             closeMenu() {
                 this.menuOpen = false;
+
+                let btn = document.getElementById("button__embed-link-<%= type %>")
+                let icon = btn.children[0]
+                btn.textContent = this.menuOpen ? "Close" : "Embed"
+                btn.appendChild(icon)
+                console.log(btn.innerText)
             },
             copyEmbedLink(slot_type_id) {
                 let text;
@@ -93,8 +105,7 @@
                 document.execCommand('copy');
                 document.body.removeChild(temp_element);
 
-                let btn = document.getElementById("button__embed-link-<%= type %>")
-                btn.innerText = "Link copied"
+                this.btn.textContent = "Link copied"
             },
             copyEmbedCode(slot_type_id) {
                 let text;
@@ -113,8 +124,7 @@
                 document.execCommand('copy');
                 document.body.removeChild(temp_element);
 
-                let btn = document.getElementById("button__embed-link-<%= type %>")
-                btn.innerText = "Code copied"
+                this.btn.innerText = "Code copied"
             }
         },
     };
