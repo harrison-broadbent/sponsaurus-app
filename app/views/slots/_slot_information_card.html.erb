@@ -19,8 +19,11 @@
               <th></th>
               <th></th>
               <th></th>
-              <th></th>
-              <th></th>
+              <th class="flex justify-end">
+                <% if current_user_owns_newsletter? @newsletter and slots == @future_slots %>
+                  <%= render 'embed_dropdown', slot_types: @newsletter.slot_types, type: "desktop" %>
+                <% end %>
+              </th>
             </tr>
           </thead>
           <tr class="bg-grey-500">
