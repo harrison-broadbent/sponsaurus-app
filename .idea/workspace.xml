@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28cb7ab1-1eb4-4c7b-bc13-e28237027c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/slots/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/slots/_embed_dropdown.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/slots/_embed_dropdown.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +190,10 @@
       <workItem from="1629282748262" duration="132000" />
       <workItem from="1629582732671" duration="10061000" />
       <workItem from="1629603300026" duration="6562000" />
+      <workItem from="1629795698291" duration="4141000" />
+      <workItem from="1629879270264" duration="7877000" />
+      <workItem from="1629940892781" duration="3867000" />
+      <workItem from="1629952779167" duration="5431000" />
     </task>
     <servers />
   </component>
